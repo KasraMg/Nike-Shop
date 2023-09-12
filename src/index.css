@@ -2,8 +2,150 @@
 @tailwind components;
 @tailwind utilities;
 
- 
- 
+
+
 @layer utilities {
 
+  * {
+    box-sizing: border-box;
+  }
+
+  html,
+  body,
+  #root {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  img, video {
+    max-width: unset !important;
+  }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #d0d0d0;
+  }
+
+  a {
+    pointer-events: all;
+    color: black;
+    text-decoration: none;
+  }
+  .scrollDown {
+    transform: rotate(-90deg) translate(0);
 }
+.scrollDown img {
+  transform: rotate(90deg);
+  transform-origin: center;
+  animation: scroll-down-move 1s ease infinite;
+}
+@keyframes scroll-down-move {
+  0% {
+      left: -30px
+  }
+
+  50% {
+      left: -40px
+  }
+
+  to {
+      left: -30px
+  }
+}
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  canvas {
+    opacity: 0;
+    touch-action: none;
+    animation: fade-in 5s ease 1s forwards;
+  }
+
+  #code span:nth-of-type(2) {
+    animation: lower 9s linear infinite;
+  }
+
+  #code span:nth-of-type(3) {
+    animation: lower 9s linear infinite;
+  }
+
+  #code span:nth-of-type(1) {
+    text-shadow: none;
+    opacity: .4;
+  }
+
+  @keyframes lower {
+
+    0%,
+    12%,
+    18.999%,
+    23%,
+    31.999%,
+    37%,
+    44.999%,
+    46%,
+    49.999%,
+    51%,
+    58.999%,
+    61%,
+    68.999%,
+    71%,
+    85.999%,
+    96%,
+    100% {
+      opacity: 0.99;
+      text-shadow: 0 0 80px #024742, 0 0 30px #024742, 0 0 6px #024742;
+    }
+
+    19%,
+    22.99%,
+    32%,
+    36.999%,
+    45%,
+    45.999%,
+    50%,
+    50.99%,
+    59%,
+    60.999%,
+    69%,
+    70.999%,
+    86%,
+    95.999% {
+      opacity: 0.4;
+      text-shadow: none;
+    }
+  }
+
+
+
+}
+  .swiper-pagination-fraction {
+    width: 100px ; 
+   margin-bottom: 4rem;
+   position: absolute;
+   bottom: 1px;
+   left: -210px;
+  }
+  .swiper-button-next{
+    right: 47%;
+    bottom: 80px;
+  }
+  .swiper-button-prev{
+    left: 47%;
+    bottom: 80px;
+  }
+  .swiper-button-prev:after, .swiper-button-next:after {
+font-size: 1.3rem;
+color: #024742;
+border: 1px solid #024742;
+border-radius: 100%;
+padding: .5rem .8rem;
+  }

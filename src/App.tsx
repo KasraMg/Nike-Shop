@@ -1,14 +1,14 @@
-import { useState } from 'react' 
-import './App.css'
-import Shoes3d from './Shoes3d'
+import Topbar from './Components/Topbar/Topbar'
+import Home from './Pages/Home'
 
 function App() { 
 
   return (
     <>
-  <Shoes3d/> 
-
-  </>
+      <Topbar/>
+        <Home/>
+ 
+    </>
 
 
   )
