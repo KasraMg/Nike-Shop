@@ -149,3 +149,35 @@ border: 1px solid #024742;
 border-radius: 100%;
 padding: .5rem .8rem;
   }
+  @media (max-width:1200px) {
+    .swiper-button-prev{
+      left: 44%;
+      bottom: 80px;
+    }
+  }
+  @media (max-width:900px) {
+    .swiper-button-prev:after, .swiper-button-next:after {
+      font-size: 1.3rem;
+      color: #fff !important;
+      border: 1px solid #fff !important;
+     
+    }  .swiper-button-next{
+      top: 83%  !important;
+      left: 51%;
+    }
+    .swiper-button-prev{
+      top: 83%  !important;
+    }
+  }
+  @media (max-width:767px) {
+    .swiper-button-prev{
+      left: 40% !important;
+
+    }
+  }
+  @media (max-width:350px) {
+    .swiper-button-prev{
+      left: 37% !important;
+
+    }
+  }

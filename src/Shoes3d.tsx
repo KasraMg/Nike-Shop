@@ -6,7 +6,7 @@ import { useGLTF, ContactShadows, Environment } from '@react-three/drei'
 
 export default function Shoes3d() {
   return (
-    <div className=' h-full w-[137%]'>
+    <div className=' h-full sm-x2:h-[71%] w-[137%] md:!w-[108%]'>
        <Canvas eventSource={document.getElementById('root')!} eventPrefix="client" camera={{ position: [0, 0, 4], fov: 40 }}>
       <ambientLight intensity={0.7} />
       <spotLight intensity={0.5} angle={0.1} penumbra={1} position={[10, 15, -5]} castShadow />

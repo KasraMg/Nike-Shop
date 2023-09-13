@@ -6,7 +6,7 @@ const Card = (props: any) => {
       <section className="w-32 rounded-l-md relative" style={{ background: props.bg }}>
         <img className="absolute right-[10px] top-1 w-[138px]" style={{ transform: ' rotate(331deg)' }} src={props.image} alt="" />
       </section>
-      <main className="p-4  rounded-r-md pr-7 space-y-1 bg-white">
+      <main className="p-4 relative  rounded-r-md pr-7 space-y-1 bg-white">
         <p className="text-[12px]">{props.title_fa}</p>
         <div className="flex g-2 text-[12px]">
 
@@ -23,7 +23,7 @@ const Card = (props: any) => {
         <p className="text-[12px] font-bold">{props.price.current_price}$</p>
         <p className="text-[12px] text-gray-600">{props.colors} Colors</p>
 
-        <AiOutlinePlus className=' absolute right-4 cursor-pointer bottom-2' />
+        <AiOutlinePlus className=' absolute right-2 cursor-pointer bottom-2' />
       </main>
 
     </div>
