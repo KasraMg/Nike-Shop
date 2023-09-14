@@ -223,9 +223,9 @@ const Home = () => {
       </div>
 
 
-       <div className="mt-64 pt-10 bg-[#024742] ">
-        <div className='flex justify-between sm:flex-wrap sm:flex-col-reverse sm:justify-center sm:gap-3  lg:mx-10 sm-x2:!mx-5 mx-40'>
-          <p className='text-left  font-[cursive] text-[#ffffff] sm:text-[1rem] text-4xl mb-16'>Shoes suitable for any type of work </p>
+       <div className="mt-64 pt-10 bg-[#024742] pb-6 ">
+        <div className='flex justify-between sm:flex-wrap  sm:flex-col-reverse sm:justify-center sm:gap-3  lg:mx-10 sm-x2:!mx-5 mx-40'>
+          <p className='text-left sm:text-center font-[cursive] text-[#ffffff] sm:text-[1rem] text-4xl mb-16'>Shoes suitable for any type of work </p>
           <SiNike className='text-5xl bg-[#ffffff] text-[#2a6e6a] sm:mx-auto px-3 py-1 rounded-full' />
         </div>
 

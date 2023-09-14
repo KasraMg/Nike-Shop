@@ -1,3 +1,4 @@
+import Footer from './Components/Footer/Footer'
 import Topbar from './Components/Topbar/Topbar'
 import Home from './Pages/Home'
 
@@ -7,7 +8,7 @@ function App() {
     <>
       <Topbar/>
         <Home/>
- 
+      <Footer/>
     </>
 
 
