@@ -2,14 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
+ 
 @layer utilities {
 
   * {
     box-sizing: border-box;
   }
-
+  html {
+    scroll-behavior: smooth !important;
+}
   html,
   body,
   #root {
