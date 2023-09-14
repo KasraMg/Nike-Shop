@@ -18,7 +18,7 @@ const Topbar = () => {
         <div className='flex gap-3'>
           <div className='bg-white rounded-md px-2 py-2 cursor-pointer relative'>
             <AiOutlineShoppingCart />
-            <span className='bg-[#024742] rounded-3xl p-[5px] text-white text-[6px] -right-1 absolute'>0</span>
+            <span className='bg-[#024742] rounded-3xl px-2 py-[5px]  text-white text-[6px] -right-1 absolute'>0</span>
 
           </div>
           <button type="button" className=" hidden sm:!block text-3xl" data-drawer-target="drawer-example" data-drawer-show="drawer-example" aria-controls="drawer-example">

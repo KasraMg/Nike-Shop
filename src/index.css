@@ -18,9 +18,12 @@
     margin: 0;
     padding: 0;
   }
-  img, video {
+
+  img,
+  video {
     max-width: unset !important;
   }
+
   body {
     font-family: 'Inter', sans-serif;
     background: #d0d0d0;
@@ -31,27 +34,30 @@
     color: black;
     text-decoration: none;
   }
+
   .scrollDown {
     transform: rotate(-90deg) translate(0);
-}
-.scrollDown img {
-  transform: rotate(90deg);
-  transform-origin: center;
-  animation: scroll-down-move 1s ease infinite;
-}
-@keyframes scroll-down-move {
-  0% {
-      left: -30px
   }
 
-  50% {
+  .scrollDown img {
+    transform: rotate(90deg);
+    transform-origin: center;
+    animation: scroll-down-move 1s ease infinite;
+  }
+
+  @keyframes scroll-down-move {
+    0% {
+      left: -30px
+    }
+
+    50% {
       left: -40px
-  }
+    }
 
-  to {
+    to {
       left: -30px
+    }
   }
-}
 
   @keyframes fade-in {
     from {
@@ -124,60 +130,87 @@
     }
   }
 
-
+  .card-head{ 
+    /* Old browsers */
+    background: -moz-linear-gradient(-45deg, #fa782e 8%, #c82930 83%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #fa782e 8%, #c82930 83%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #fa782e 8%, #c82930 83%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#fa782e', endColorstr='#c82930', GradientType=1);
+    /* IE6-9 fallback on horizontal gradient */
+    border-radius: 25px 25px 0 0;
+  }
 
 }
-  .swiper-pagination-fraction {
-    width: 100px ; 
-   margin-bottom: 4rem;
-   position: absolute;
-   bottom: 1px;
-   left: -210px;
-  }
-  .swiper-button-next{
-    right: 47%;
+
+.swiper-pagination-fraction {
+  width: 100px;
+  margin-bottom: 4rem;
+  position: absolute;
+  bottom: 1px;
+  left: -210px;
+}
+
+.swiper-button-next {
+  right: 47%;
+  bottom: 80px;
+  top: 88% !important;
+}
+
+.swiper-button-prev {
+  left: 47%;
+  bottom: 80px;
+  top: 88% !important;
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  font-size: 1.3rem;
+  color: #024742;
+  border: 1px solid #024742;
+  border-radius: 100%;
+  padding: .5rem .8rem;
+}
+
+@media (max-width:1200px) {
+  .swiper-button-prev {
+    left: 44%;
     bottom: 80px;
   }
-  .swiper-button-prev{
-    left: 47%;
-    bottom: 80px;
-  }
-  .swiper-button-prev:after, .swiper-button-next:after {
-font-size: 1.3rem;
-color: #024742;
-border: 1px solid #024742;
-border-radius: 100%;
-padding: .5rem .8rem;
-  }
-  @media (max-width:1200px) {
-    .swiper-button-prev{
-      left: 44%;
-      bottom: 80px;
-    }
-  }
-  @media (max-width:900px) {
-    .swiper-button-prev:after, .swiper-button-next:after {
-      font-size: 1.3rem;
-      color: #fff !important;
-      border: 1px solid #fff !important;
-     
-    }  .swiper-button-next{
-      top: 83%  !important;
-      left: 51%;
-    }
-    .swiper-button-prev{
-      top: 83%  !important;
-    }
-  }
-  @media (max-width:767px) {
-    .swiper-button-prev{
-      left: 40% !important;
+}
 
-    }
-  }
-  @media (max-width:350px) {
-    .swiper-button-prev{
-      left: 37% !important;
+@media (max-width:900px) {
 
-    }
+  .swiper-button-prev:after,
+  .swiper-button-next:after {
+    font-size: 1.3rem;
+    color: #fff !important;
+    border: 1px solid #fff !important;
+
   }
+
+  .swiper-button-next {
+    top: 83% !important;
+    left: 51%;
+  }
+
+  .swiper-button-prev {
+    top: 83% !important;
+  }
+}
+
+@media (max-width:767px) {
+  .swiper-button-prev {
+    left: 40% !important;
+
+  }
+}
+
+@media (max-width:350px) {
+  .swiper-button-prev {
+    left: 37% !important;
+
+  }
+}
