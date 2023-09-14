@@ -165,6 +165,12 @@
   top: 88% !important;
 }
 
+.slider2 .swiper-button-prev:after,
+.slider2 .swiper-button-next:after {
+  color: #ffffff;
+  border: 1px solid #ffffff;
+
+}
 .swiper-button-prev:after,
 .swiper-button-next:after {
   font-size: 1.3rem;

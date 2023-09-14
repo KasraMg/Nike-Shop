@@ -1,13 +1,12 @@
 import Shoes3d from '../Shoes3d'
 import { useState } from 'react';
-import { Virtual, Pagination, Navigation } from 'swiper/modules';
+import { Virtual, Pagination, Navigation, Autoplay } from 'swiper/modules';
 import { SiJordan, SiNike } from 'react-icons/si'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import CardSlider from '../Components/SliderCard/Card';
-import { AiFillStar } from 'react-icons/ai';
+import CardSlider from '../Components/SliderCard/Card'; 
 import Card from '../Components/TrendsCard/Card';
 const Home = () => {
   const [sliderData, setSliderData] = useState(
@@ -154,12 +153,12 @@ const Home = () => {
 
 
       <section className=' mt-40'>
-        <div className='flex justify-between mx-40'>
-          <p className='text-left  font-[cursive] text-[#024742] text-4xl mb-16'>Why choose Nike shoes? </p>
+        <div className='flex justify-between lg:mx-10 sm-x2:!mx-5 mx-40'>
+          <p className='text-left  font-[cursive] sm-x2:text-[16px] text-[#024742] text-4xl mb-16'>Why choose Nike shoes? </p>
           <SiNike className='text-5xl bg-[#2a6e6a] text-white px-3 py-1 rounded-full' />
         </div>
 
-        <main className='flex justify-center gap-12'>
+        <main className='flex flex-wrap lg:mx-10 sm-x2:!mx-5 justify-center gap-12'>
           <div style={{ boxShadow: '12px 12px 26px rgba(0, 0, 0, 0.2),-12px -12px 26px rgba(255, 255, 255, 0.6)' }} className="relative  w-[300px] text-[rgb(0,59,8)]   rounded-3xl p-8 bg-[#ecf0f3] ">
             <span className='text-center block mx-auto font-bold'>Beauty</span>
             <p className=' text-[13px] mt-8 tracking-tight font-[cursive]'>Nike has tried to make its name synonymous with fashion and beauty, so every pair of Nike sneakers or sneakers can mean a new season in fashion.</p>
@@ -180,21 +179,118 @@ const Home = () => {
       </section>
 
       <div className='mt-64'>
-        <div className='flex justify-between mx-40'>
-          <p className='text-left  font-[cursive] text-[#024742] text-4xl mb-16'>Trends </p>
+        <div className='flex justify-between lg:mx-10 sm-x2:!mx-5 mx-40'>
+          <p className='text-left  font-[cursive] sm-x2:text-[19px] text-[#024742] text-4xl mb-16'>Trends </p>
           <SiNike className='text-5xl bg-[#2a6e6a] text-white px-3 py-1 rounded-full' />
-        </div> 
-        <main className='grid  grid-cols-[auto,auto,auto] justify-between mx-40'>
+        </div>
 
+        <Swiper
+          autoplay={{
+            delay: 1500,
+            disableOnInteraction: false,
+
+          }}
+          modules={[Autoplay]}
+          rewind={true} className='w-full  sm-x2:block hidden'>
+          <SwiperSlide className='overflow-hidden'>
             <Card />
+          </SwiperSlide>
+          <SwiperSlide className='overflow-hidden'>
             <Card />
+          </SwiperSlide>
+          <SwiperSlide className='overflow-hidden'>
             <Card />
-  
+          </SwiperSlide>
+
+        </Swiper>
+
+        <main className=' sm-x2:hidden grid gap-20 lg:justify-evenly sm:!grid-cols-[auto] lg:grid-cols-[auto,auto] lg:mx-10 sm-x2:!mx-5 grid-cols-[auto,auto,auto] justify-between mx-40'>
+
+
+
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />        <Card />
+          <Card />
+          <Card />        <Card />
+          <Card />
+          <Card />
         </main>
+
       </div>
+
+
+       <div className="mt-64 pt-10 bg-[#024742] ">
+        <div className='flex justify-between sm:flex-wrap sm:flex-col-reverse sm:justify-center sm:gap-3  lg:mx-10 sm-x2:!mx-5 mx-40'>
+          <p className='text-left  font-[cursive] text-[#ffffff] sm:text-[1rem] text-4xl mb-16'>Shoes suitable for any type of work </p>
+          <SiNike className='text-5xl bg-[#ffffff] text-[#2a6e6a] sm:mx-auto px-3 py-1 rounded-full' />
+        </div>
+
+
+        <Swiper
+          modules={[Pagination, Navigation]}
+          rewind={true}
+          spaceBetween={30}
+          navigation={true}
+          breakpoints={{
+            300: {
+              slidesPerView: 1,
+              spaceBetween: 20,
+            },
+            767: {
+              slidesPerView: 2,
+              spaceBetween: 40,
+            },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 50,
+            },
+            1200: {
+              slidesPerView: 4,
+              spaceBetween: 30,
+            },
+          }}
+          className='  relative slider2  sm:!w-full lg:w-[88%] sm:mt-4   w-[80%] mt-10 pb-32   '
+        >
+
+          <SwiperSlide className=' flex justify-center items-center'  >
+            <img className='w-[200px] rounded-full' src="https://static.nike.com/a/images/f_auto/dpr_1.3,cs_srgb/h_300,c_limit/3aef76c8-46c5-4f2a-a18c-3e9bdc148433/nike-offizielle-website.jpg" alt="" />
+          </SwiperSlide>
+          <SwiperSlide className=' flex justify-center items-center'  >
+            <img className='w-[200px] rounded-full' src="https://static.nike.com/a/images/f_auto/dpr_1.3,cs_srgb/h_300,c_limit/5027a28c-3984-4287-94d1-ee6198238ce9/nike-offizielle-website.jpg" alt="" />
+          </SwiperSlide>
+          <SwiperSlide className=' flex justify-center items-center'  >
+            <img className='w-[200px] rounded-full' src="https://static.nike.com/a/images/f_auto/dpr_1.3,cs_srgb/h_300,c_limit/be13cfe4-b5a9-4c26-bee0-b716e98b099d/nike-offizielle-website.jpg" alt="" />
+          </SwiperSlide>
+          <SwiperSlide className=' flex justify-center items-center'  >
+            <img className='w-[200px] rounded-full' src="https://static.nike.com/a/images/f_auto/dpr_1.3,cs_srgb/h_300,c_limit/b4722f0f-c0e4-4a1b-8050-9f026ef947e9/nike-offizielle-website.jpg" alt="" />
+          </SwiperSlide>
+          <SwiperSlide className=' flex justify-center items-center'  >
+            <img className='w-[200px] rounded-full' src="https://static.nike.com/a/images/f_auto/dpr_1.3,cs_srgb/h_300,c_limit/5f432ab0-7ed1-48b9-b8c8-9eb3f5dcb63d/nike-offizielle-website.jpg" alt="" />
+          </SwiperSlide>
+          <SwiperSlide className=' flex justify-center items-center'  >
+            <img className='w-[200px] rounded-full' src="https://static.nike.com/a/images/f_auto/dpr_1.3,cs_srgb/h_300,c_limit/11550514-c82b-46b2-afd8-e5dd62698371/nike-offizielle-website.jpg" alt="" />
+          </SwiperSlide>
+          <SwiperSlide className=' flex justify-center items-center'  >
+            <img className='w-[200px] rounded-full' src="https://static.nike.com/a/images/f_auto/dpr_1.3,cs_srgb/h_300,c_limit/ed6efa3d-bb62-4d41-89f1-49d01418fe49/nike-offizielle-website.jpg" alt="" />
+          </SwiperSlide>
+          <SwiperSlide className=' flex justify-center items-center'  >
+            <img className='w-[200px] rounded-full' src="https://static.nike.com/a/images/f_auto/dpr_1.3,cs_srgb/h_300,c_limit/1d2fd0c4-a7dd-4159-84c0-a0364c0990e3/nike-offizielle-website.jpg" alt="" />
+          </SwiperSlide>
+          <SwiperSlide className=' flex justify-center items-center'  >
+            <img className='w-[200px] rounded-full' src="https://static.nike.com/a/images/f_auto/dpr_1.3,cs_srgb/h_300,c_limit/3aef76c8-46c5-4f2a-a18c-3e9bdc148433/nike-offizielle-website.jpg" alt="" />
+          </SwiperSlide>
+
+
+
+        </Swiper>
+
+      </div>  
     </>
   )
 }
 
 export default Home
- 
