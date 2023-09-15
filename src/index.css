@@ -221,3 +221,9 @@
 
   }
 }
+#tsparticles canvas{
+  position: absolute !important; 
+  bottom: 300px;
+  z-index: 999;
+
+}

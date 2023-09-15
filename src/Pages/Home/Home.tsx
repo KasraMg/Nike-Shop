@@ -1,4 +1,4 @@
-import Shoes3d from '../Shoes3d'
+import Shoes3d from '../../Components/Shoes3d/Shoes3d'
 import { useState } from 'react';
 import { Virtual, Pagination, Navigation, Autoplay } from 'swiper/modules';
 import { SiJordan, SiNike } from 'react-icons/si'
@@ -6,8 +6,12 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import CardSlider from '../Components/SliderCard/Card'; 
-import Card from '../Components/TrendsCard/Card';
+import CardSlider from '../../Components/SliderCard/Card';
+import Card from '../../Components/TrendsCard/Card';
+import ParticlesComponent from '../../Components/Particles/Particles';
+
+
+
 const Home = () => {
   const [sliderData, setSliderData] = useState(
     [
@@ -16,7 +20,7 @@ const Home = () => {
         bg: 'red',
         title_fa: "Air.jordan.koo.me  ",
         status: "marketable",
-        image: "/a3a62194837f1ba391316da6ae1de5d6a48d275f_1675779303-removebg-preview.png",
+        image: "/images/a3a62194837f1ba391316da6ae1de5d6a48d275f_1675779303-removebg-preview.png",
         price: {
           current_price: 150,
           prev_price: 180,
@@ -30,7 +34,7 @@ const Home = () => {
         bg: 'red',
         title_fa: "Air.jordan.koo.me  ",
         status: "marketable",
-        image: "/a3a62194837f1ba391316da6ae1de5d6a48d275f_1675779303-removebg-preview.png",
+        image: "/images/a3a62194837f1ba391316da6ae1de5d6a48d275f_1675779303-removebg-preview.png",
         price: {
           current_price: 120,
           prev_price: 180,
@@ -44,7 +48,7 @@ const Home = () => {
         bg: 'orange',
         title_fa: "Air.jordan.koo.me  ",
         status: "marketable",
-        image: "/a3a62194837f1ba391316da6ae1de5d6a48d275f_1675779303-removebg-preview.png",
+        image: "/images/a3a62194837f1ba391316da6ae1de5d6a48d275f_1675779303-removebg-preview.png",
         price: {
           current_price: 150,
           prev_price: 180,
@@ -58,7 +62,7 @@ const Home = () => {
         bg: 'orange',
         title_fa: "Air.jordan.koo.me  ",
         status: "marketable",
-        image: "/a3a62194837f1ba391316da6ae1de5d6a48d275f_1675779303-removebg-preview.png",
+        image: "/images/a3a62194837f1ba391316da6ae1de5d6a48d275f_1675779303-removebg-preview.png",
         price: {
           current_price: 120,
           prev_price: 180,
@@ -72,7 +76,7 @@ const Home = () => {
         bg: 'blue',
         title_fa: "Air.jordan.koo.me  ",
         status: "marketable",
-        image: "/a3a62194837f1ba391316da6ae1de5d6a48d275f_1675779303-removebg-preview.png",
+        image: "/images/a3a62194837f1ba391316da6ae1de5d6a48d275f_1675779303-removebg-preview.png",
         price: {
           current_price: 150,
           prev_price: 180,
@@ -86,7 +90,7 @@ const Home = () => {
         bg: 'blue',
         title_fa: "Air.jordan.koo.me  ",
         status: "marketable",
-        image: "/a3a62194837f1ba391316da6ae1de5d6a48d275f_1675779303-removebg-preview.png",
+        image: "/images/a3a62194837f1ba391316da6ae1de5d6a48d275f_1675779303-removebg-preview.png",
         price: {
           current_price: 120,
           prev_price: 180,
@@ -104,8 +108,8 @@ const Home = () => {
     <>
       <section className='h-full relative'>
         <Shoes3d />
-        <main className='absolute md:relative left-0 top-0'>
-          <div className='w-[600px] md:!w-full lg:w-[400px] pt-40 bg-[#024742] left-1 md:h-[300px]   h-[100vh] homeShape'>
+        <main className='absolute md:relative left-0 top-0 z-[9997]' >
+          <div className=' w-[600px] md:!w-full lg:w-[400px] pt-40 bg-[#024742] left-1 md:h-[300px]   h-[100vh] homeShape'>
             <div className='text-white sm:pl-0 pl-8 space-y-6 font-[cursive] relative md:flex justify-center'>
               <SiJordan style={{ transform: ' rotate(185deg)' }} className=' md:hidden text-center absolute lg:left-[180px] left-[279px] text-[6rem] top-[116px] font-[20rem] text-[#fffffff6]' />
 
@@ -142,7 +146,7 @@ const Home = () => {
             spaceBetween: 30,
           },
         }}
-        className=' sm-x2:bottom-52 md:!mb-0 relative bottom-16 sm:!w-full lg:w-[88%] md:pb-20  w-[80%]  pb-20   '
+        className=' z-[9998] sm-x2:bottom-52 md:!mb-0 relative bottom-16 sm:!w-full lg:w-[88%] md:pb-20  w-[80%]  pb-20   '
       >
         {sliderData.map((data, index) => (
           <SwiperSlide className='text-center  font-[18px]   flex justify-center items-center' virtualIndex={index}>
@@ -151,79 +155,83 @@ const Home = () => {
         ))}
       </Swiper>
 
+      <div className='relative'>
 
-      <section className=' mt-40'>
-        <div className='flex justify-between lg:mx-10 sm-x2:!mx-5 mx-40'>
-          <p className='text-left  font-[cursive] sm-x2:text-[16px] text-[#024742] text-4xl mb-16'>Why choose Nike shoes? </p>
-          <SiNike className='text-5xl bg-[#2a6e6a] text-white px-3 py-1 rounded-full' />
+        <ParticlesComponent />
+
+        <section className=' mt-32'>
+          <div className='flex justify-between lg:mx-10 sm-x2:!mx-5 mx-40'>
+            <p className='text-left  font-[cursive] sm-x2:text-[16px] text-[#024742] text-4xl mb-16'>Why choose Nike shoes? </p>
+            <SiNike className='text-5xl bg-[#2a6e6a] text-white px-3 py-1 rounded-full' />
+          </div>
+
+          <main className='flex flex-wrap lg:mx-10 sm-x2:!mx-5 justify-center gap-12'>
+            <div style={{ boxShadow: '12px 12px 26px rgba(0, 0, 0, 0.2),-12px -12px 26px rgba(255, 255, 255, 0.6)' }} className="relative  w-[300px] text-[rgb(0,59,8)] z-[999] rounded-3xl p-8 bg-[#ecf0f3] ">
+              <span className='text-center block mx-auto font-bold'>Beauty</span>
+              <p className=' text-[13px] mt-8 tracking-tight font-[cursive]'>Nike has tried to make its name synonymous with fashion and beauty, so every pair of Nike sneakers or sneakers can mean a new season in fashion.</p>
+
+            </div>
+            <div style={{ boxShadow: '12px 12px 26px rgba(0, 0, 0, 0.2),-12px -12px 26px rgba(255, 255, 255, 0.6)' }} className="relative  w-[300px] text-[rgb(0,59,8)] z-[999] rounded-3xl p-8 bg-[#ecf0f3] ">
+              <span className='text-center block mx-auto font-bold'>comfortable</span>
+              <p className=' text-[13px] mt-8 tracking-tight font-[cursive]'>Nike is not only a sports brand, but this brand also has the best offers for daily walks and a long working day. Give comfort to your feet.</p>
+
+            </div>
+            <div style={{ boxShadow: '12px 12px 26px rgba(0, 0, 0, 0.2),-12px -12px 26px rgba(255, 255, 255, 0.6)' }} className="relative  w-[300px] text-[rgb(0,59,8)] z-[999] rounded-3xl p-8 bg-[#ecf0f3] ">
+              <span className='text-center block mx-auto font-bold'>diverse</span>
+              <p className=' text-[13px] mt-8 tracking-tight font-[cursive]'>You can use Nike shoes for walking on flat surfaces, climbing, running or specialized sports such as basketball, tennis or volleyball.</p>
+
+            </div>
+          </main>
+
+        </section>
+
+        <div className='mt-64'>
+          <div className='flex justify-between lg:mx-10 sm-x2:!mx-5 mx-40'>
+            <p className='text-left  font-[cursive] sm-x2:text-[19px] text-[#024742] text-4xl mb-16'>Trends </p>
+            <SiNike className='text-5xl bg-[#2a6e6a] text-white px-3 py-1 rounded-full' />
+          </div>
+
+          <Swiper
+            autoplay={{
+              delay: 1500,
+              disableOnInteraction: false,
+
+            }}
+            modules={[Autoplay]}
+            rewind={true} className='w-full  sm-x2:block hidden'>
+            <SwiperSlide className='overflow-hidden'>
+              <Card />
+            </SwiperSlide>
+            <SwiperSlide className='overflow-hidden'>
+              <Card />
+            </SwiperSlide>
+            <SwiperSlide className='overflow-hidden'>
+              <Card />
+            </SwiperSlide>
+
+          </Swiper>
+
+          <main className=' sm-x2:hidden grid gap-20 lg:justify-evenly sm:!grid-cols-[auto] lg:grid-cols-[auto,auto] lg:mx-10 sm-x2:!mx-5 grid-cols-[auto,auto,auto] justify-between mx-40'>
+
+
+
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />        <Card />
+            <Card />
+            <Card />        <Card />
+            <Card />
+            <Card />
+          </main>
+
         </div>
-
-        <main className='flex flex-wrap lg:mx-10 sm-x2:!mx-5 justify-center gap-12'>
-          <div style={{ boxShadow: '12px 12px 26px rgba(0, 0, 0, 0.2),-12px -12px 26px rgba(255, 255, 255, 0.6)' }} className="relative  w-[300px] text-[rgb(0,59,8)]   rounded-3xl p-8 bg-[#ecf0f3] ">
-            <span className='text-center block mx-auto font-bold'>Beauty</span>
-            <p className=' text-[13px] mt-8 tracking-tight font-[cursive]'>Nike has tried to make its name synonymous with fashion and beauty, so every pair of Nike sneakers or sneakers can mean a new season in fashion.</p>
-
-          </div>
-          <div style={{ boxShadow: '12px 12px 26px rgba(0, 0, 0, 0.2),-12px -12px 26px rgba(255, 255, 255, 0.6)' }} className="relative  w-[300px] text-[rgb(0,59,8)]   rounded-3xl p-8 bg-[#ecf0f3] ">
-            <span className='text-center block mx-auto font-bold'>comfortable</span>
-            <p className=' text-[13px] mt-8 tracking-tight font-[cursive]'>Nike is not only a sports brand, but this brand also has the best offers for daily walks and a long working day. Give comfort to your feet.</p>
-
-          </div>
-          <div style={{ boxShadow: '12px 12px 26px rgba(0, 0, 0, 0.2),-12px -12px 26px rgba(255, 255, 255, 0.6)' }} className="relative  w-[300px] text-[rgb(0,59,8)]   rounded-3xl p-8 bg-[#ecf0f3] ">
-            <span className='text-center block mx-auto font-bold'>diverse</span>
-            <p className=' text-[13px] mt-8 tracking-tight font-[cursive]'>You can use Nike shoes for walking on flat surfaces, climbing, running or specialized sports such as basketball, tennis or volleyball.</p>
-
-          </div>
-        </main>
-
-      </section>
-
-      <div className='mt-64'>
-        <div className='flex justify-between lg:mx-10 sm-x2:!mx-5 mx-40'>
-          <p className='text-left  font-[cursive] sm-x2:text-[19px] text-[#024742] text-4xl mb-16'>Trends </p>
-          <SiNike className='text-5xl bg-[#2a6e6a] text-white px-3 py-1 rounded-full' />
-        </div>
-
-        <Swiper
-          autoplay={{
-            delay: 1500,
-            disableOnInteraction: false,
-
-          }}
-          modules={[Autoplay]}
-          rewind={true} className='w-full  sm-x2:block hidden'>
-          <SwiperSlide className='overflow-hidden'>
-            <Card />
-          </SwiperSlide>
-          <SwiperSlide className='overflow-hidden'>
-            <Card />
-          </SwiperSlide>
-          <SwiperSlide className='overflow-hidden'>
-            <Card />
-          </SwiperSlide>
-
-        </Swiper>
-
-        <main className=' sm-x2:hidden grid gap-20 lg:justify-evenly sm:!grid-cols-[auto] lg:grid-cols-[auto,auto] lg:mx-10 sm-x2:!mx-5 grid-cols-[auto,auto,auto] justify-between mx-40'>
-
-
-
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />        <Card />
-          <Card />
-          <Card />        <Card />
-          <Card />
-          <Card />
-        </main>
 
       </div>
 
-
-       <div className="mt-64 pt-10 bg-[#024742] pb-6 " id='gallery'>
+      <div className="mt-64 pt-10 bg-[#024742] pb-6 " id='gallery'>
         <div className='flex justify-between sm:flex-wrap  sm:flex-col-reverse sm:justify-center sm:gap-3  lg:mx-10 sm-x2:!mx-5 mx-40'>
           <p className='text-left sm:text-center font-[cursive] text-[#ffffff] sm:text-[1rem] text-4xl mb-16'>Shoes suitable for any type of work </p>
           <SiNike className='text-5xl bg-[#ffffff] text-[#2a6e6a] sm:mx-auto px-3 py-1 rounded-full' />
@@ -288,7 +296,10 @@ const Home = () => {
 
         </Swiper>
 
-      </div>  
+      </div>
+
+
+
     </>
   )
 }

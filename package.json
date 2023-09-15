@@ -27,8 +27,7 @@
     "@vitejs/plugin-react": "^4.0.0",
     "eslint": "^8.38.0",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.3.4",
-    "formik": "^2.2.9",
+    "eslint-plugin-react-refresh": "^0.3.4" ,
     "framer-motion": "10.6.0",
     "flowbite": "^1.7.0",
     "react-router-dom": "^6.4.2",
@@ -39,7 +38,9 @@
     "three": "0.150.1",
     "typescript": "^5.0.2",
     "valtio": "1.10.3",
-    "vite": "^4.3.9",
-    "yup": "^1.1.1"
+    "vite": "^4.3.9", 
+    "react-particles": "^2.9.3", 
+    "react-tsparticles": "^2.9.3", 
+    "tsparticles": "^2.9.3" 
   }
 }

@@ -3,10 +3,10 @@ import { AiFillStar } from 'react-icons/ai'
 
 const Card = () => {
   return (
-    <div style={{ boxShadow: '-11px 11px 1px rgba(0, 0, 0, 0.3)' }} className=" rounded-3xl sm-x2:mx-auto  sm-x2:w-[280px]  w-[300px]">
+    <div style={{ boxShadow: '-11px 11px 1px rgba(0, 0, 0, 0.3)' }} className="z-[999] rounded-3xl sm-x2:mx-auto  sm-x2:w-[280px]  w-[300px]">
 
       <section className="relative h-[252px] bg-[#fa782e] card-head pt-10">
-        <img style={{ transform: ' rotate3d(-174, 1000, 104, 578deg)' }} src="/a3a62194837f1ba391316da6ae1de5d6a48d275f_1675779303-removebg-preview.png" alt="Shoe" className="absolute z-50 sm-x2:ml-[37px] left-0 ml-[70px] -mt-[16px] " />
+        <img width={'253px'} style={{ transform: ' rotate3d(-13, 1000, 104, 563deg)' }} src="/images/a3a62194837f1ba391316da6ae1de5d6a48d275f_1675779303-removebg-preview.png" alt="Shoe" className="absolute z-50 sm-x2:ml-[17px] left-0 ml-[24px]  mt-[4px] " />
         <div className="py-0 px-5  text-white text-3xl relative top-2">
           Air jordan nike
         </div>

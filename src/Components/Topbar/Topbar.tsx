@@ -3,10 +3,10 @@ import { AiOutlineShoppingCart } from 'react-icons/ai'
 import { RiMenu5Fill } from 'react-icons/ri'
 const Topbar = () => {
   return (
-    <header className='relative'>
+    <header className='relative z-[9999]'>
       <div className='flex justify-between items-center sm-x2:px-4  px-8 py-4 absolute w-[99%] z-50 top-0 left-0'>
 
-        <SiNike className='text-5xl text-white md:hidden' />
+      <SiNike className='text-5xl text-white md:hidden' />
         <SiNike className='text-5xl text-[#2a6e6a] md:block hidden' />
 
         <ul className='flex gap-6 sm:hidden' >
