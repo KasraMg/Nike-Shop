@@ -13,6 +13,7 @@ import ParticlesComponent from '../../Components/Particles/Particles';
 
 
 const Home = () => {
+  console.log(location.pathname.length)
   const [sliderData, setSliderData] = useState(
     [
       {

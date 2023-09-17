@@ -3,6 +3,7 @@
 @tailwind utilities;
 
  
+ 
 @layer utilities {
 
   * {
@@ -143,9 +144,11 @@
     /* IE6-9 fallback on horizontal gradient */
     border-radius: 25px 25px 0 0;
   }
-
+ 
 }
-
+ .leaflet-control-attribution  {
+    display: none !important;
+  }
 .swiper-pagination-fraction {
   width: 100px;
   margin-bottom: 4rem;

@@ -10,15 +10,19 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "google-map-react": "^2.2.1",
+    "leaflet": "^1.9.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^4.11.0"
+    "react-icons": "^4.11.0",
+    "react-leaflet": "^4.2.1"
   },
   "devDependencies": {
     "@pmndrs/branding": "0.0.8",
     "@react-spring/web": "9.7.1",
     "@react-three/drei": "9.71.0",
     "@react-three/fiber": "8.12.0",
+    "@types/leaflet": "^1.9.4",
     "@types/react": "^18.0.37",
     "@types/react-dom": "^18.0.11",
     "@types/three": "0.149.0",
@@ -27,20 +31,20 @@
     "@vitejs/plugin-react": "^4.0.0",
     "eslint": "^8.38.0",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.3.4" ,
-    "framer-motion": "10.6.0",
+    "eslint-plugin-react-refresh": "^0.3.4",
     "flowbite": "^1.7.0",
+    "framer-motion": "10.6.0",
+    "react-particles": "^2.9.3",
     "react-router-dom": "^6.4.2",
     "react-scripts": "5.0.1",
+    "react-tsparticles": "^2.9.3",
     "sweetalert": "^2.1.2",
     "swiper": "^10.0.0",
     "tailwindcss": "^3.3.2",
     "three": "0.150.1",
+    "tsparticles": "^2.9.3",
     "typescript": "^5.0.2",
     "valtio": "1.10.3",
-    "vite": "^4.3.9", 
-    "react-particles": "^2.9.3", 
-    "react-tsparticles": "^2.9.3", 
-    "tsparticles": "^2.9.3" 
+    "vite": "^4.3.9"
   }
 }
