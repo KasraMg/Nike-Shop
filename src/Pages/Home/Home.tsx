@@ -1,5 +1,5 @@
 import Shoes3d from '../../Components/Shoes3d/Shoes3d'
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import { Virtual, Pagination, Navigation, Autoplay } from 'swiper/modules';
 import { SiJordan, SiNike } from 'react-icons/si'
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -9,101 +9,23 @@ import 'swiper/css/pagination';
 import CardSlider from '../../Components/SliderCard/Card';
 import Card from '../../Components/TrendsCard/Card';
 import ParticlesComponent from '../../Components/Particles/Particles';
+import { getProductsFromServer } from '../../Redux/Slice/Cart';
+import { useAppDispatch, useAppSelector } from '../../Redux/hooks';
 
 
 
-const Home = () => {
-  console.log(location.pathname.length)
-  const [sliderData, setSliderData] = useState(
-    [
-      {
-        id: 10626850,
-        bg: 'red',
-        title_fa: "Air.jordan.koo.me  ",
-        status: "marketable",
-        image: "/images/a3a62194837f1ba391316da6ae1de5d6a48d275f_1675779303-removebg-preview.png",
-        price: {
-          current_price: 150,
-          prev_price: 180,
-          is_off: true,
-        },
-        star: 4,
-        colors: 4
-      },
-      {
-        id: 10626850,
-        bg: 'red',
-        title_fa: "Air.jordan.koo.me  ",
-        status: "marketable",
-        image: "/images/a3a62194837f1ba391316da6ae1de5d6a48d275f_1675779303-removebg-preview.png",
-        price: {
-          current_price: 120,
-          prev_price: 180,
-          is_off: true,
-        },
-        colors: 4,
-        star: 3,
-      },
-      {
-        id: 10626850,
-        bg: 'orange',
-        title_fa: "Air.jordan.koo.me  ",
-        status: "marketable",
-        image: "/images/a3a62194837f1ba391316da6ae1de5d6a48d275f_1675779303-removebg-preview.png",
-        price: {
-          current_price: 150,
-          prev_price: 180,
-          is_off: true,
-        },
-        colors: 4,
-        star: 2,
-      },
-      {
-        id: 10626850,
-        bg: 'orange',
-        title_fa: "Air.jordan.koo.me  ",
-        status: "marketable",
-        image: "/images/a3a62194837f1ba391316da6ae1de5d6a48d275f_1675779303-removebg-preview.png",
-        price: {
-          current_price: 120,
-          prev_price: 180,
-          is_off: true,
-        },
-        colors: 4,
-        star: 3,
-      },
-      {
-        id: 10626850,
-        bg: 'blue',
-        title_fa: "Air.jordan.koo.me  ",
-        status: "marketable",
-        image: "/images/a3a62194837f1ba391316da6ae1de5d6a48d275f_1675779303-removebg-preview.png",
-        price: {
-          current_price: 150,
-          prev_price: 180,
-          is_off: true,
-        },
-        colors: 4,
-        star: 3,
-      },
-      {
-        id: 10626850,
-        bg: 'blue',
-        title_fa: "Air.jordan.koo.me  ",
-        status: "marketable",
-        image: "/images/a3a62194837f1ba391316da6ae1de5d6a48d275f_1675779303-removebg-preview.png",
-        price: {
-          current_price: 120,
-          prev_price: 180,
-          is_off: true,
-        },
-        colors: 4,
-        star: 3,
-      },
+const Home = () => { 
+ 
 
-    ]
-  );
-
+  const products = useAppSelector(state => state.cart)
+  const dispatch = useAppDispatch()
+  
+  useEffect(() => {
+    dispatch(getProductsFromServer())
+    console.log(products);
+    
+  }, [])
+  
 
   return (
     <>
@@ -147,10 +69,10 @@ const Home = () => {
             spaceBetween: 30,
           },
         }}
-        className=' z-[9998] sm-x2:bottom-52 md:!mb-0 relative bottom-16 sm:!w-full lg:w-[88%] md:pb-20  w-[80%]  pb-20   '
+        className=' px-4 z-[9998] sm-x2:bottom-52 md:!mb-0 relative bottom-16 sm:!w-full lg:w-[88%] md:pb-20  w-[80%]  pb-20   '
       >
-        {sliderData.map((data, index) => (
-          <SwiperSlide className='text-center  font-[18px]   flex justify-center items-center' virtualIndex={index}>
+        {products.length > 0 && products.slice(0,6).map(data=> (
+          <SwiperSlide className='text-center  font-[18px]   flex justify-center items-center'>
             <CardSlider {...data} />
           </SwiperSlide>
         ))}
