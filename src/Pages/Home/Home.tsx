@@ -121,33 +121,22 @@ const Home = () => {
 
             }}
             modules={[Autoplay]}
-            rewind={true} className='w-full  sm-x2:block hidden'>
-            <SwiperSlide className='overflow-hidden'>
-              <Card />
+            rewind={true} className='w-full  sm-x2:block hidden'> 
+            {products && products.map(data=>( 
+              <SwiperSlide className='overflow-hidden'>
+               <Card {...data}/>
             </SwiperSlide>
-            <SwiperSlide className='overflow-hidden'>
-              <Card />
-            </SwiperSlide>
-            <SwiperSlide className='overflow-hidden'>
-              <Card />
-            </SwiperSlide>
+            ))} 
+         
 
           </Swiper>
 
           <main className=' sm-x2:hidden grid gap-20 lg:justify-evenly sm:!grid-cols-[auto] lg:grid-cols-[auto,auto] lg:mx-10 sm-x2:!mx-5 grid-cols-[auto,auto,auto] justify-between mx-40'>
 
 
-
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />        <Card />
-            <Card />
-            <Card />        
-            <Card />
-            <Card />
+            {products && products.map(data=>(
+              <Card {...data}/>
+            ))} 
           </main>
 
         </div>

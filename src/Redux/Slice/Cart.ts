@@ -1,20 +1,9 @@
 import { createSlice, createAsyncThunk,PayloadAction } from "@reduxjs/toolkit";
+import { product } from "../../Types/Cart.types";
 
 
-type product={
-    id:number,
-    title:string,
-    image:string,
-    price:{
-        current_price:number,
-        prev_price:number
-    },
-    bg:string,
-    star:number
-}
- 
 
-  const initialState: product[] = []
+const initialState: product[] = []
 
 export const getProductsFromServer = createAsyncThunk(
   "cart/getProductsFromServer",
