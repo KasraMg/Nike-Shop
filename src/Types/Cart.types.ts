@@ -7,6 +7,11 @@ export type product={
         prev_price:number
     },
     bg:string,
-    star:number
+    star:number,
+    image2:string,
+    image3:string,
+    Designed_by:string,
+    size:[],
+    description:string
 }
  

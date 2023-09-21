@@ -1,10 +1,10 @@
 import React from 'react'
 import { AiFillStar } from 'react-icons/ai'
 import { product } from '../../Types/Cart.types'
-
+import { Link } from 'react-router-dom'
 const Card = (props: product) => {
   return (
-    <div style={{ boxShadow: '-11px 11px 1px rgba(0, 0, 0, 0.3)' }} className="z-[999] rounded-3xl sm-x2:mx-auto  sm-x2:w-[280px]  w-[300px]">
+    <Link to={`Product/${props.id}`} style={{ boxShadow: '-11px 11px 1px rgba(0, 0, 0, 0.3)' }} className="z-[999] rounded-3xl sm-x2:mx-auto  sm-x2:w-[280px]  w-[300px]">
 
       <section style={{ background: `linear-gradient(135deg, ${props.bg} 8%, #2a6e6a 83%)`, borderRadius: '25px 25px 0 0' }} className="relative h-[252px]   pt-10">
         <p className="py-0 px-5  text-white text-1xl  font-[cursive] relative top-2">
@@ -42,7 +42,7 @@ const Card = (props: product) => {
         <button className='bg-[#024742] w-full rounded-md py-2 text-white mt-8'>add to cart</button>
 
       </section>
-    </div>
+    </Link>
 
   )
 }

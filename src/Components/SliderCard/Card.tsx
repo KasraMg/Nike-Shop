@@ -1,8 +1,9 @@
 import { AiFillStar, AiOutlinePlus, AiOutlineStar } from "react-icons/ai"
+import { Link } from "react-router-dom"
 
 const Card = (props: any) => {
   return (
-    <div className="flex text-left  "> 
+    <Link to={`Product/${props.id}`} className="flex text-left  "> 
       <section className="w-32 rounded-l-md relative" style={{ background: props.bg }}>
         <img className="absolute right-[0] top-1 w-[175px]" style={{ transform: ' rotate(331deg)' }} src={props.image} alt="" />
       </section>
@@ -26,7 +27,7 @@ const Card = (props: any) => {
         <AiOutlinePlus className=' absolute right-2 cursor-pointer bottom-2' />
       </main>
 
-    </div>
+    </Link>
   )
 }
 

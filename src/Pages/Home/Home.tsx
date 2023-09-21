@@ -1,5 +1,5 @@
 import Shoes3d from '../../Components/Shoes3d/Shoes3d'
-import { useState,useEffect } from 'react';
+import { useEffect } from 'react';
 import { Virtual, Pagination, Navigation, Autoplay } from 'swiper/modules';
 import { SiJordan, SiNike } from 'react-icons/si'
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -11,12 +11,9 @@ import Card from '../../Components/TrendsCard/Card';
 import ParticlesComponent from '../../Components/Particles/Particles';
 import { getProductsFromServer } from '../../Redux/Slice/Cart';
 import { useAppDispatch, useAppSelector } from '../../Redux/hooks';
-
-
-
-const Home = () => { 
  
-
+const Home = () => { 
+  
   const products = useAppSelector(state => state.cart)
   const dispatch = useAppDispatch()
   
