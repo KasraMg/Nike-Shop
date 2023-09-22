@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react' 
+import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { product as ProductType } from '../../Types/Cart.types'
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -7,6 +7,8 @@ import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
 import { SiJordan } from 'react-icons/si'
+import ParticlesComponent from '../../Components/Particles/Particles';
+
 const Product = () => {
     const [productInfo, setProductInfo] = useState<ProductType>()
     const param = useParams()
@@ -21,8 +23,9 @@ const Product = () => {
     }, [])
 
     return (
-        <div style={{ boxShadow: ' 0px 15px 50px 10px rgba(0, 0, 0, 0.4' }} className="card bg-[#024742] items-center h-full w-full m-auto  mt-[2%]">
-            <main className=' relative mx-auto w-max pt-36'>
+        <div style={{ boxShadow: ' 0px 15px 50px 10px rgba(0, 0, 0, 0.4' }} className="card mt-12 bg-[#024742] items-center h-full w-full m-auto  productPage">
+
+            <main className=' relative mx-auto w-max pt-28 mt-8  z-[9999]'>
                 {productInfo && (
                     <>
                         <div style={{ background: `linear-gradient(135deg, ${productInfo.bg} 8%, #2a6e6a 83%)`, content: '', borderRadius: ' 0% 50% 50% 0%' }} className="h-[500px] w-[400px] flex items-center absolute z-[5] bg-[#ff6d39] mr-[93px]">
@@ -93,6 +96,8 @@ const Product = () => {
                 )}
 
             </main>
+
+            <ParticlesComponent color='#fff' />
 
         </div>
     )

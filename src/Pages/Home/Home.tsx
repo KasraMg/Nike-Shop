@@ -77,7 +77,7 @@ const Home = () => {
 
       <div className='relative'>
 
-        <ParticlesComponent />
+        <ParticlesComponent color='#024742' />
 
         <section className=' mt-32'>
           <div className='flex justify-between lg:mx-10 sm-x2:!mx-5 mx-40'>

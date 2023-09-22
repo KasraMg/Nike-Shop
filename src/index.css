@@ -222,4 +222,6 @@
 
 
 
- 
+ .productPage .swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active {
+  background: white !important;
+ }

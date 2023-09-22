@@ -1,7 +1,7 @@
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles"; 
 
-const ParticlesComponent = () => {
+const ParticlesComponent = (color:{ color: string; }) => {
     const particlesInit = async (main: any) => {
         await loadFull(main);
       };
@@ -24,7 +24,7 @@ const ParticlesComponent = () => {
                 }
               },
               "color": {
-                "value": "#024742"
+                "value": `${color.color}`
               },
               "shape": {
                 "type": "circle",
@@ -65,7 +65,7 @@ const ParticlesComponent = () => {
               "line_linked": {
                 "enable": true,
                 "distance": 600,
-                "color": "#ffffff",
+                "color": `${color.color}`,
                 "opacity": 0.4,
                 "width": 2
               },
