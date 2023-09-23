@@ -225,3 +225,8 @@
  .productPage .swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active {
   background: white !important;
  }
+ @media (min-width:901px) {
+  .product-Slide{
+    width: 105% !important;
+  }
+ }
