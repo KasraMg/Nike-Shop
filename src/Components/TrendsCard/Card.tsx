@@ -4,9 +4,9 @@ import { product } from '../../Types/Cart.types'
 import { Link } from 'react-router-dom'
 const Card = (props: product) => {
   return (
-    <Link to={`Product/${props.id}`} style={{ boxShadow: '-11px 11px 1px rgba(0, 0, 0, 0.3)' }} className="z-[999] rounded-3xl sm-x2:mx-auto  sm-x2:w-[280px]  w-[300px]">
+    <Link to={`/Product/${props.id}`} style={{ boxShadow: '-11px 11px 1px rgba(0, 0, 0, 0.3)' }} className="z-[999] rounded-3xl sm-x2:mx-auto  sm-x2:w-[280px]  w-[300px]">
 
-      <section style={{ background: `linear-gradient(135deg, ${props.bg} 8%, #2a6e6a 83%)`, borderRadius: '25px 25px 0 0' }} className="relative h-[252px]   pt-10">
+      <section style={{ background: `linear-gradient(135deg, #2a6e6a 8%, ${props.bg} 83%)`, borderRadius: '25px 25px 0 0' }} className="relative h-[252px]   pt-10">
         <p className="py-0 px-5  text-white text-1xl  font-[cursive] relative top-2">
           {props.title}
         </p>
@@ -28,12 +28,8 @@ const Card = (props: product) => {
         </div>
 
         <div className='flex justify-between'>
-          <span className=''>colors:</span>
-          <div className='flex gap-3 mt-2'>
-            <div className='w-5 h-5 rounded-full bg-red-600'></div>
-            <div className='w-5 h-5 rounded-full bg-red-600'></div>
-            <div className='w-5 h-5 rounded-full bg-red-600'></div>
-          </div>
+          <span className=''>Designed by:</span>
+         {props.Designed_by}
         </div>
         <div className='flex justify-between mt-3'>
           <span className=''>price:</span>

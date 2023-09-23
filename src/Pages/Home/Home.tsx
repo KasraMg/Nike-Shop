@@ -170,7 +170,7 @@ const Home = () => {
               spaceBetween: 30,
             },
           }}
-          className='  relative slider2  sm:!w-full lg:w-[88%] sm:mt-4   w-[80%] mt-10 pb-32   '
+          className='z-[9999]  relative slider2  sm:!w-full lg:w-[88%] sm:mt-4   w-[80%] mt-10 pb-32   '
         >
 
           <SwiperSlide className=' flex justify-center items-center'  >

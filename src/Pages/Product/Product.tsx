@@ -4,14 +4,25 @@ import { product as ProductType } from '../../Types/Cart.types'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { Pagination } from 'swiper/modules';
-import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
-import { SiJordan } from 'react-icons/si'
+import { Autoplay } from 'swiper/modules'; 
+import {  SiNike } from 'react-icons/si'
 import ParticlesComponent from '../../Components/Particles/Particles';
+import { useAppDispatch, useAppSelector } from '../../Redux/hooks';
+import { getProductsFromServer } from '../../Redux/Slice/Cart';
+import Card from '../../Components/TrendsCard/Card';
+import ProductMain from '../../Components/ProductMain/ProductMain';
 
 const Product = () => {
     const [productInfo, setProductInfo] = useState<ProductType>()
     const param = useParams()
+    const products = useAppSelector(state => state.cart)
+    const dispatch = useAppDispatch()
+
+    useEffect(() => {
+        dispatch(getProductsFromServer())
+        console.log(products);
+
+    }, [])
 
     useEffect(() => {
         fetch(`http://localhost:4000/products?id=${param.id}`)
@@ -19,83 +30,88 @@ const Product = () => {
             .then(data => {
                 console.log(data);
                 setProductInfo(data[0])
+                window.scrollTo(0, 0)
             })
-    }, [])
+    }, [param])
 
     return (
-        <div style={{ boxShadow: ' 0px 15px 50px 10px rgba(0, 0, 0, 0.4' }} className="card md:mt-0 mt-12 bg-[#024742] items-center h-full w-full m-auto md:h-[unset] productPage">
+        <div style={{ boxShadow: ' 0px 15px 50px 10px rgba(0, 0, 0, 0.4' }} className="  relative md:mt-0 mt-12 bg-[#024742] items-center w-full m-auto md:h-[unset] productPage">
+            {productInfo && (
+                <main className=' relative mx-auto md:mt-0 md:pt-20 w-max pt-28 mt-8 md:w-full  z-[9999]'>
+                    <ProductMain {...productInfo}/> 
+                   
+                </main>
+            )}
+             <hr className=' absolute top-[380px] w-full' />
+            <section className='bg-white mt-32 py-20 sm-x2:mt-10 '>
+                <div className='flex justify-between lg:mx-10 sm-x2:!mx-5 mx-40'>
+                    <p className='text-left  font-[cursive] sm-x2:text-[16px] text-[#2a6e6a] text-4xl mb-16'>Good to know </p>
+                    <SiNike className='text-5xl bg-[#2a6e6a] text-[#fff] px-3 py-1 rounded-full' />
+                </div>
 
-            <main className=' relative mx-auto md:mt-0 md:pt-20 w-max pt-28 mt-8 md:w-full  z-[9999]'>
-                {productInfo && (
-                    <>
-                        <div style={{ background: `linear-gradient(135deg, ${productInfo.bg} 8%, #2a6e6a 83%)`, content: '', borderRadius: ' 0% 50% 50% 0%' }} className="h-[500px] sm:h-[300px] md:w-full md:!rounded-none md:relative w-[400px] flex items-center absolute z-[5] bg-[#ff6d39] mr-[93px]">
+                <main className='flex flex-wrap lg:mx-10 sm-x2:!mx-5 justify-center gap-12'>
 
-                            <Swiper
-                                pagination={{
-                                    dynamicBullets: true,
-                                }}
-                                rewind={true}
-                                modules={[Pagination]}
-                                className="mySwiper sm:pb-4 md:!w-full lg:w-[416px] w-[500px] md:relative md:bottom-0 absolute bottom-24"
-                            >
-                                <SwiperSlide className=' product-Slide  lg:pl-3'>  <img src={productInfo.image} className='-ml-[65px] w-[576px]  lg:w-[490px] md:!w-[100%]     md:mx-auto mt-[60px] md:mt-0' alt="shoe" /></SwiperSlide>
-                                <SwiperSlide className=' product-Slide  lg:pl-3'>  <img src={productInfo.image2} className='-ml-[65px] w-[576px]  lg:w-[490px] md:!w-[100%]     md:mx-auto mt-[60px] md:mt-0' alt="shoe" /></SwiperSlide>
-                                <SwiperSlide className=' product-Slide  lg:pl-3'>  <img src={productInfo.image3} className='-ml-[65px] w-[576px]  lg:w-[490px] md:!w-[100%]     md:mx-auto mt-[60px] md:mt-0' alt="shoe" /></SwiperSlide>
+                    <div style={{ boxShadow: '12px 12px 6px rgba(0, 0, 0, 0.2),-12px -12px 6px rgba(255, 255, 255, 0.6)' }} className="relative z-[9999]  w-[300px] text-[rgb(0,59,8)]  rounded-3xl p-8 bg-[#ecf0f3] ">
+                        <span className='text-center block mx-auto font-bold'>SHIPPING</span>
+                        <p className=' text-[13px] mt-8 tracking-tight font-[cursive]'>We always aim to ship out your order within a few business days.
 
-                            </Swiper>
-                        </div>
-                        <div style={{ content: '' }} className="h-[500px] relative sm-x2:!h-full bg-[#ffffff] lg:w-[700px] md:!w-full md:ml-0 w-[800px] z-[3] ml-[200px] content">
-                            <div className=" absolute md:relative sm-x2:!h-full sm-x2:pb-10 md:right-0 sm-x2:!px-4 md:px-8 md:w-full top-1 right-[64px] h-[500px]   w-[400px] z-10">
-                                <div className="flex justify-between pt-5">
-                                    <h1 className='text-[#024742] font-[cursive] text-3xl'>Nike</h1>
-                                    <SiJordan className='text-[#024742] relative md:left-0 left-8 text-2xl cursor-pointer' />
-                                </div>
+                            You can check the estimated shipping time in the 'Shipping Information' tab (above the Add To Cart button).</p>
 
-                                <div className=" font-[cursive] uppercase ">
-                                    <h3 className='mt-16'>disiend by {productInfo.Designed_by}</h3>
-                                    <p className='my-4 sm-x2:whitespace-break-spaces text-3xl whitespace-nowrap'>{productInfo.title}</p>
+                    </div>
 
-                                    <section className='flex justify-between sm-x2:flex-col sm-x2:gap-5'>
+                    <div style={{ boxShadow: '12px 12px 6px rgba(0, 0, 0, 0.2),-12px -12px 6px rgba(255, 255, 255, 0.6)' }} className="relative z-[9999] bg-[#2a6e6a]   w-[300px] text-[rgb(255,255,255)]  rounded-3xl p-8   ">
+                        <span className='text-center block mx-auto font-bold'>AUTHENTICITY</span>
+                        <p className=' text-[13px] mt-8 tracking-tight font-[cursive]'>All products are 100% authentic & brand new.
 
-                                        <div className='flex gap-5'>
-                                            <h4> ${productInfo.price.current_price}</h4>
-                                            {productInfo.price.prev_price &&
-                                                <h4 className=' line-through'>${productInfo.price.prev_price}</h4>}
-                                        </div>
+                            We do not sell nor support the sale of fake products. All our products are authenticated & thoroughly checked before they're shipped out.</p>
 
-                                        <div className='flex gap-2'>
-                                            {Array(productInfo.star)
-                                                .fill(0)
-                                                .map(() => <AiFillStar className='text-[orange]' />
-                                                )}
-                                            {Array(5 - productInfo.star)
-                                                .fill(0)
-                                                .map(() => <AiOutlineStar className='text-[orange]' />
-                                                )}
-                                        </div>
+                    </div>
 
-                                    </section>
+                    <div style={{ boxShadow: '12px 12px 6px rgba(0, 0, 0, 0.2),-12px -12px 6px rgba(255, 255, 255, 0.6)' }} className="relative z-[9999]  w-[300px] text-[rgb(0,59,8)]  rounded-3xl p-8 bg-[#ecf0f3] ">
+                        <span className='text-center block mx-auto font-bold'>CANCELLATIONS & RETURNS</span>
+                        <p className=' text-[13px] mt-8 tracking-tight font-[cursive]'> Unfortunately you can not cancel your order once it's placed. However, if we have not fulfilled your order yet, you may request a different size/color or model.</p>
 
-                                </div>
-                                <div className='flex sm-x2:mt-5  gap-9 justify-between my-3'>
-                                    <p>SIZE</p>
-                                    <ul className='flex gap-2'>
-                                        {productInfo.size.map(data => (
-                                            <li className='text-[14px]'>{data}</li>
-                                        ))}
-                                    </ul>
-                                </div>
+                    </div>
+                </main>
 
-                                <p className='mt-4 text-[#7d7777]'>{productInfo.description}</p>
+            </section>
 
-                                <button className='bg-[#024742] mt-14 w-full rounded-lg py-2 text-white'>Add To Cart</button>
-                            </div>
-                        </div>
+            <section className=' pt-16 lg:mx-10 sm-x2:!mx-5 mx-40'>
 
-                    </>
-                )}
+                <div className='flex justify-between  '>
+                    <p className='text-left  font-[cursive] sm-x2:text-[16px] text-[#ffffff] text-4xl mb-16'>  Other Products </p>
+                    <SiNike className='text-5xl bg-[#fafafa] text-[#2a6e6a] px-3 py-1 rounded-full' />
+                </div>
+                <Swiper
+                    autoplay={{
+                        delay: 1500,
+                        disableOnInteraction: false,
 
-            </main>
+                    }} breakpoints={{
+                        300: {
+                            slidesPerView: 1,
+                            spaceBetween: 20,
+                        },
+                        767: {
+                            slidesPerView: 2,
+                            spaceBetween: 40,
+                        },
+                        1024: {
+                            slidesPerView: 3,
+                            spaceBetween: 50,
+                        }
+                    }}
+                    modules={[Autoplay]}
+                    rewind={true} className='w-full z-[9999]  mt-6 pb-12'>
+                    {products && products.map(data => (
+                        <SwiperSlide className='overflow-hidden'>
+                            <Card {...data} />
+                        </SwiperSlide>
+                    ))}
+
+
+                </Swiper>
+            </section>
 
             <ParticlesComponent color='#fff' />
 
