@@ -3,9 +3,10 @@ import { AiOutlineShoppingCart } from 'react-icons/ai'
 import { RiMenu5Fill } from 'react-icons/ri'
 import { Link } from 'react-router-dom'
 import { useEffect,useState } from 'react'
+import { useAppSelector } from '../../Redux/hooks'
 const Topbar = () => {
   const [url,setUrl]=useState<string>('')
-
+  const cart = useAppSelector(state => state.cart)
   useEffect(() => {
     setUrl(location.pathname)
   }, [location.pathname])
@@ -24,11 +25,11 @@ const Topbar = () => {
         </ul>
 
         <div className='flex gap-3'>
-          <div className={`${url.length > 2 ? 'bg-[#024742] text-white':'bg-white'} rounded-md px-2 py-2 cursor-pointer relative`}>
+          <Link to='/basket' className={`${url.length > 2 ? 'bg-[#024742] text-white':'bg-white'} rounded-md px-2 py-2 cursor-pointer relative`}>
             <AiOutlineShoppingCart />
-            <span className={`${url.length > 2 ? 'bg-[white] text-[#024742]':'bg-[#024742]  text-white'}  rounded-3xl px-2 py-[5px]  text-[6px] -right-1 absolute`}>0</span>
+            <span className={`${url.length > 2 ? 'bg-[white] text-[#024742]':'bg-[#024742]  text-white'}  rounded-3xl px-2 py-[5px]  text-[6px] -right-1 absolute`}>{cart.length}</span>
 
-          </div>
+          </Link>
           <button type="button" className=" hidden sm:!block text-3xl" data-drawer-target="drawer-example" data-drawer-show="drawer-example" aria-controls="drawer-example">
             <RiMenu5Fill />
           </button>

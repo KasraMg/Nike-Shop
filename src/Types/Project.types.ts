@@ -15,3 +15,16 @@ export type product={
     description:string
 }
  
+
+export type productCart={
+    id:number,
+    title:string,
+    image:string,
+    price:{
+        current_price:number,
+        prev_price:number
+    },
+    bg:string,
+    count:number,
+    star:number
+}

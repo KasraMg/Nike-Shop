@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { product as ProductType } from '../../Types/Cart.types'
+import { product as ProductType } from '../../Types/Project.types'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -8,14 +8,14 @@ import { Autoplay } from 'swiper/modules';
 import {  SiNike } from 'react-icons/si'
 import ParticlesComponent from '../../Components/Particles/Particles';
 import { useAppDispatch, useAppSelector } from '../../Redux/hooks';
-import { getProductsFromServer } from '../../Redux/Slice/Cart';
+import { getProductsFromServer } from '../../Redux/Slice/Product';
 import Card from '../../Components/TrendsCard/Card';
 import ProductMain from '../../Components/ProductMain/ProductMain';
 
 const Product = () => {
     const [productInfo, setProductInfo] = useState<ProductType>()
     const param = useParams()
-    const products = useAppSelector(state => state.cart)
+    const products = useAppSelector(state => state.product)
     const dispatch = useAppDispatch()
 
     useEffect(() => {

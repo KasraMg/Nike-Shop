@@ -9,12 +9,12 @@ import 'swiper/css/pagination';
 import CardSlider from '../../Components/SliderCard/Card';
 import Card from '../../Components/TrendsCard/Card';
 import ParticlesComponent from '../../Components/Particles/Particles';
-import { getProductsFromServer } from '../../Redux/Slice/Cart';
+import { getProductsFromServer } from '../../Redux/Slice/Product';
 import { useAppDispatch, useAppSelector } from '../../Redux/hooks';
  
 const Home = () => { 
   
-  const products = useAppSelector(state => state.cart)
+  const products = useAppSelector(state => state.product)
   const dispatch = useAppDispatch()
   
   useEffect(() => {

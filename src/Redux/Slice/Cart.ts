@@ -1,33 +1,27 @@
 import { createSlice, createAsyncThunk,PayloadAction } from "@reduxjs/toolkit";
-import { product } from "../../Types/Cart.types";
+import { productCart } from "../../Types/Project.types";
 
 
 
-const initialState: product[] = []
+const initialState: productCart[] = []
 
-export const getProductsFromServer = createAsyncThunk(
-  "cart/getProductsFromServer",
-  async () => {
-    return fetch("http://localhost:4000/products")
-      .then((res) => res.json())
-      .then((data) => data );
-  }
-);
+ 
 
-
-
-const slice = createSlice({
+const Cartslice = createSlice({
   name: "cart",
   initialState,
-  reducers: {},
-
-  extraReducers: (builder) => {
-    builder.addCase(  getProductsFromServer.fulfilled,  (state, action) => action.payload   )
-  
+  reducers: {
+    addToCart:(state,action)=>{
+        return [...state,action.payload]
+        
+    }
   },
+
+   
 });
 
-export default slice.reducer;
+export default Cartslice.reducer; 
+export const { addToCart } = Cartslice.actions
 
 
 
@@ -36,25 +30,4 @@ export default slice.reducer;
 
 
 
-
-
-
-
-
-
-
-
-
-// export const removeUser = createAsyncThunk("users/removeUser", async (id) => {
-//   return fetch(`https://redux-cms.iran.liara.run/api/users/${id}`, {
-//     method: "DELETE",
-//   })
-//     .then((res) => res.json())
-//     .then((data) => data);
-// }); 
-
-//   builder.addCase(removeUser.fulfilled, (state, action) => {
-    //     const newUsers = state.filter((user) => user._id !== action.payload.id);
-
-    //     return newUsers;
-    //   });
+ 
