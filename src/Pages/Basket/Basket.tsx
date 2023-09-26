@@ -1,11 +1,10 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
-import { useAppSelector } from '../../Redux/hooks'
-import { AiFillStar, AiOutlineStar } from 'react-icons/ai'
-import { BiSolidTrashAlt } from 'react-icons/bi'
+import {  useAppSelector } from '../../Redux/hooks' 
+import Card from '../../Components/CartCard/Card'
 
 const Basket = () => {
   const cart = useAppSelector(state => state.cart)
+
 
   return (
     <div className='bg-[#024742] mt-20 px-8 sm-x2:px-4 '>
@@ -19,43 +18,7 @@ const Basket = () => {
             <hr className='w-full' />
             {cart.map(product => (
 
-              <section className='flex mt-10 relative w-max'>
-                <div className='rounded-l' style={{ background: `linear-gradient(135deg, #2a6e6a 8%, ${product.bg} 83%)` }}>
-                  <img src={product.image} className='w-36' alt="" />
-                </div>
-                <div className='bg-white rounded-r  flex items-center justify-between px-4 py-4  w-80'>
-                  <div>
-                    <p>{product.title}</p>
-                    <p className='mt-4'>{product.price.current_price}</p>
-
-                  </div>
-                  <div>
-                    <div className='flex justify-between items-center gap-2'>
-                      <span className='cursor-pointer px-[1px]'> -</span>
-                      <p className='bg-[#17604e66] px-2 text-[14px] rounded-md'>{product.count}</p>
-                      <span className='cursor-pointer'> +</span>
-                    </div>
-                    <div className='flex mt-4'>
-                      {Array(product.star)
-                      .fill(0)
-                      .map(() => <AiFillStar className='text-[orange]' />
-                      )}
-                    {Array(5 - product.star)
-                      .fill(0)
-                      .map(() => <AiOutlineStar className='text-[orange]' />
-                      )}
-                    </div>
-                    
-
-
-                  </div>
-
-                </div> 
-
-                <div className='absolute -right-3 cursor-pointer bg-white rounded-full -top-4 p-2'>
-                  <BiSolidTrashAlt className='text-red-600    ' />
-                  </div>
-              </section>
+            <Card {...product}/>
                
             ))}
           </section>

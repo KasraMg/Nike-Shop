@@ -220,7 +220,12 @@
 
 }
 
-
+.swal-footer{
+  text-align: center;
+}
+.swal-footer button{
+  background-color: #024742 !important;
+}
 
  .productPage .swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active {
   background: white !important;

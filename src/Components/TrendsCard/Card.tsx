@@ -3,7 +3,7 @@ import { product, productCart } from '../../Types/Project.types'
 import { Link } from 'react-router-dom'
 import swal from 'sweetalert'
 import { useAppDispatch, useAppSelector } from '../../Redux/hooks'
-import { addToCart } from '../../Redux/Slice/Cart'
+import { addToCart, minusCount, plusCount, removeProduct } from '../../Redux/Slice/Cart'
 import { useEffect, useState } from 'react'
 import { BiSolidTrashAlt } from 'react-icons/bi'
 const Card = (props: product) => {
@@ -30,11 +30,19 @@ const Card = (props: product) => {
 
     dispatch(addToCart(product))
   }
-
+  const plusCountHandler = () => {
+    dispatch(plusCount(props.id))
+  }
+  const minusCountHandler = () => {
+    dispatch(minusCount(props.id))
+  }
+  const removeProductHandler = () => {
+    dispatch(removeProduct(props.id))
+  }
   useEffect(() => {
     const data = cart.filter(product => {
       return product.id == props.id
-    }) 
+    })
 
     if (data.length) {
       setIsExists(data)
@@ -82,34 +90,34 @@ const Card = (props: product) => {
           <p>{props.price && props.price.current_price}$</p>
         </div>
         {isExists?.length ? (
-        <>
+          <>
             {isExists.map(data => (
               <>
                 {data.id == props.id ? (
                   <div className='flex justify-between items-baseline '>
-                      <Link to='/basket'   className='bg-[#32958e] transition-colors block hover:bg-[#305f5c] w-[100px] text-center rounded-md py-2 text-white mt-8'>Go to cart</Link>
+                    <Link to='/basket' className='bg-[#32958e] transition-colors block hover:bg-[#305f5c] w-[100px] text-center rounded-md py-2 text-white mt-8'>Go to cart</Link>
                     <section className='flex gap-5'>
-                           <div className='flex justify-between items-center gap-2 w-[60px]'>
-                      <span className='cursor-pointer px-[1px]'> -</span>
-                      <p className='bg-[#17604e66] px-2 text-[14px] rounded-md'>{data.count}</p>
-                      <span className='cursor-pointer'> +</span>
-                    
-                    </div>
-                    <BiSolidTrashAlt className=' text-1xl text-red-600 relative top-[2px]' />
+                      <div className='flex justify-between items-center gap-2 w-[60px]'>
+                        <span onClick={minusCountHandler} className='cursor-pointer px-[1px]'> -</span>
+                        <p className='bg-[#17604e66] px-2 text-[14px] rounded-md'>{data.count}</p>
+                        <span onClick={plusCountHandler} className='cursor-pointer'> +</span>
+
+                      </div>
+                      <BiSolidTrashAlt className=' text-1xl text-red-600 relative top-[2px] cursor-pointer' onClick={removeProductHandler} />
                     </section>
-                 
+
                   </div>
-                
+
                 ) : (
                   <button onClick={addToCartHandler} className='bg-[#024742] transition-colors hover:bg-[#305f5c] w-full rounded-md py-2 text-white mt-8'>add to cart</button>
                 )}
               </>
             ))}
-           </>
+          </>
 
-        ):(
+        ) : (
           <button onClick={addToCartHandler} className='bg-[#024742] transition-colors hover:bg-[#305f5c] w-full rounded-md py-2 text-white mt-8'>add to cart</button>
-        ) }
+        )}
 
 
 

@@ -1,4 +1,5 @@
-import { AiFillStar, AiOutlinePlus, AiOutlineStar } from "react-icons/ai"
+import { AiFillStar , AiOutlineStar } from "react-icons/ai"
+import { SiJordan } from "react-icons/si"
 import { Link } from "react-router-dom"
 
 const Card = (props: any) => {
@@ -24,7 +25,7 @@ const Card = (props: any) => {
         <p className="text-[12px] font-bold">{props.price.current_price}$</p>
         <p className="text-[12px] text-gray-600">{props.colors} Colors</p>
 
-        <AiOutlinePlus className=' absolute right-2 cursor-pointer bottom-2' />
+        <SiJordan className=' absolute right-2 cursor-pointer bottom-2' />
       </main>
 
     </Link>
