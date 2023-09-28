@@ -135,7 +135,7 @@ const Home = () => {
           <main className=' sm-x2:hidden grid gap-20 lg:justify-evenly sm:!grid-cols-[auto] lg:grid-cols-[auto,auto] lg:mx-10 sm-x2:!mx-5 grid-cols-[auto,auto,auto] justify-between mx-40'>
 
 
-            {products && products.map(data=>(
+            {products && products.slice(0,12).map(data=>(
               <Card {...data}/>
             ))} 
           </main>

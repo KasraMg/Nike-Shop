@@ -8,7 +8,7 @@ const Topbar = () => {
   const [url, setUrl] = useState<string>('')
   const cart = useAppSelector(state => state.cart)
   useEffect(() => {
-    setUrl(location.pathname)
+    setUrl(location.pathname) 
   }, [location.pathname])
 
   return (
@@ -23,23 +23,20 @@ const Topbar = () => {
           <WavyLink duration={1000} color="#024742" to='/'><SiNike className='text-5xl text-[#2a6e6a]' /></WavyLink>
         </div>
 
-
-
-
         <ul className='flex gap-6 sm:hidden' >
-          <WavyLink duration={1000} color="#024742" to='/'><li className='cursor-pointer font-bold font-[cursive] text-black'>Home</li></WavyLink>
-          <WavyLink duration={1000} color="#024742" to='/ContactUs'> <li className='cursor-pointer font-bold font-[cursive] text-gray-600  whitespace-nowrap'>Contact us</li></WavyLink>
-          <WavyLink duration={1000} color="#024742" to='/'><li className='cursor-pointer font-bold font-[cursive] text-gray-600'>Accont</li></WavyLink>
+          <WavyLink duration={1000} color="#024742" to='/'><li className={`${url.length < 2 ? ' text-black' : ' text-gray-600 '} cursor-pointer font-bold font-[cursive]`}>Home</li></WavyLink>
+          <WavyLink duration={1000} color="#024742" to='/ContactUs'> <li className={` ${location.pathname == '/ContactUs' ? 'text-black ' : 'text-gray-600 '}cursor-pointer font-bold font-[cursive] whitespace-nowrap`}>Contact us</li></WavyLink>
+          <WavyLink duration={1000} color="#024742" to='/AllProducts'><li className={`  ${location.pathname == '/AllProducts' ? 'text-black ' : 'text-gray-600 '} cursor-pointer font-bold font-[cursive] `}>Products</li></WavyLink>
         </ul>
 
         <div className='flex gap-3'>
-          <div  className={`${url.length > 2 ? 'bg-[#024742] text-white' : 'bg-white'} rounded-md px-2 pt-2 pb-1 cursor-pointer relative`}>
-             <WavyLink duration={1000} color="#024742" to='/basket'>
-            <AiOutlineShoppingCart />
-            <span className={`${url.length > 2 ? 'bg-[white] text-[#024742]' : 'bg-[#024742]  text-white'}  rounded-3xl px-2 py-[5px]  text-[6px] -right-1 absolute`}>{cart.length}</span>
+          <div className={`${url.length > 2 ? 'bg-[#024742] text-white' : 'bg-white'} rounded-md px-2 pt-2 pb-1 cursor-pointer relative`}>
+            <WavyLink duration={1000} color="#024742" to='/basket'>
+              <AiOutlineShoppingCart />
+              <span className={`${url.length > 2 ? 'bg-[white] text-[#024742]' : 'bg-[#024742]  text-white'}  rounded-3xl px-[6px] py-[3px]  text-[9px] -right-1 absolute`}>{cart.length}</span>
 
-          </WavyLink>
-          
+            </WavyLink>
+
           </div>
           <button type="button" className=" hidden sm:!block text-3xl" data-drawer-target="drawer-example" data-drawer-show="drawer-example" aria-controls="drawer-example">
             <RiMenu5Fill />
@@ -48,9 +45,6 @@ const Topbar = () => {
 
 
       </div>
-
-
-
 
       <div id="drawer-example" className="fixed z-[999] top-0 left-0 border-r bg-[url(/Images/projectBg.jpg)]  h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-white w-80 dark:bg-gray-800" aria-labelledby="drawer-label">
         <div className="flex justify-between items-center py-3 px-4 border-b dark:border-gray-700">
