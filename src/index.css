@@ -228,7 +228,9 @@
 .swal-footer button{
   background-color: #024742 !important;
 }
-
+.swal-button--cancel{
+  color: white !important;
+}
  .productPage .swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active {
   background: white !important;
  }

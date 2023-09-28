@@ -37,11 +37,12 @@ const Product = () => {
     return (
         <div style={{ boxShadow: ' 0px 15px 50px 10px rgba(0, 0, 0, 0.4' }} className="  relative md:mt-0 mt-12 bg-[#024742] items-center w-full m-auto md:h-[unset] productPage">
             {productInfo && (
-                <main className=' relative mx-auto md:mt-0 md:pt-20 w-max pt-28 mt-8 md:w-full  z-[9999]'>
+                <>
+                <main className=' relative mx-auto md:mt-0 md:pt-20 w-max pt-28 mt-8 md:w-full  z-[9998]'>
                     <ProductMain {...productInfo}/> 
                    
                 </main>
-            )}
+         
              <hr className=' absolute top-[380px] w-full' />
             <section className='bg-white mt-32 py-20 sm-x2:mt-10 '>
                 <div className='flex justify-between lg:mx-10 sm-x2:!mx-5 mx-40'>
@@ -112,7 +113,8 @@ const Product = () => {
 
                 </Swiper>
             </section>
-
+            </>
+         )}
             <ParticlesComponent color='#fff' />
 
         </div>

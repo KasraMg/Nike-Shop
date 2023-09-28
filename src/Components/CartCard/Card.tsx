@@ -3,6 +3,8 @@ import { useAppDispatch, useAppSelector } from '../../Redux/hooks'
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai'
 import { BiSolidTrashAlt } from 'react-icons/bi'
 import { minusCount, plusCount, removeProduct } from '../../Redux/Slice/Cart'
+import swal from 'sweetalert'
+import { WavyLink } from 'react-wavy-transitions'
 const Card = (product: productCart) => {
     const dispatch = useAppDispatch()
 
@@ -13,14 +15,27 @@ const Card = (product: productCart) => {
         dispatch(minusCount(product.id))
     }
     const removeProductHandler = () => {
-        dispatch(removeProduct(product.id))
+        swal({
+            title: 'Do you want to delete this product?',
+            icon: 'warning',
+            buttons: ['no', 'ok']
+        }).then((res: Boolean) => {
+            if (res) {
+                dispatch(removeProduct(product.id))
+            }
+        })
+
     }
 
     return (
         <section className='flex mt-10 relative w-max'>
-            <div className='rounded-l' style={{ background: `linear-gradient(135deg, #2a6e6a 8%, ${product.bg} 83%)` }}>
-                <img src={product.image} className='w-36' alt="" />
-            </div>
+            
+                <div className='rounded-l' style={{ background: `linear-gradient(135deg, #2a6e6a 8%, ${product.bg} 83%)` }}>
+                <WavyLink duration={1000} color="#fff" to={`/product/${product.id}`}>
+                    <img src={product.image} className='w-36' alt="" />
+                    </WavyLink>
+                </div>
+        
             <div className='bg-white rounded-r  flex items-center justify-between px-4 py-4  w-80'>
                 <div>
                     <p>{product.title}</p>

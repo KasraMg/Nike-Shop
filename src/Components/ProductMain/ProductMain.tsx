@@ -8,8 +8,9 @@ import 'swiper/css/pagination';
 import { useState, useEffect } from 'react'
 import { useAppDispatch, useAppSelector } from '../../Redux/hooks';
 import { BiSolidTrashAlt } from 'react-icons/bi';
-import { Link, useParams } from 'react-router-dom';
-import { addToCart } from '../../Redux/Slice/Cart';
+import { useParams } from 'react-router-dom';
+import { addToCart, minusCount, plusCount, removeProduct } from '../../Redux/Slice/Cart';
+import { WavyLink } from 'react-wavy-transitions';
 const ProductMain = (props: product) => {
 
 
@@ -17,6 +18,16 @@ const ProductMain = (props: product) => {
     const param = useParams()
     const cart = useAppSelector(state => state.cart)
     const dispatch = useAppDispatch()
+
+    const plusCountHandler = () => {
+        dispatch(plusCount(props.id))
+      }
+      const minusCountHandler = () => {
+        dispatch(minusCount(props.id))
+      }
+      const removeProductHandler = () => {
+        dispatch(removeProduct(props.id))
+      }
 
     useEffect(() => {
         console.log('rf');
@@ -117,15 +128,18 @@ const ProductMain = (props: product) => {
                                 <>
                                     {data.id == props.id ? (
                                         <div className='flex justify-between items-baseline '>
-                                            <Link to='/basket' className='bg-[#32958e] transition-colors block hover:bg-[#305f5c] w-[100px] text-center rounded-md py-2 text-white mt-8'>Go to cart</Link>
+                                            <div  className='bg-[#32958e] transition-colors block hover:bg-[#305f5c] w-[100px] text-center rounded-md py-2 text-white mt-8'>
+                                                        <WavyLink duration={1000} color="#eee" to='/basket'>Go to cart</WavyLink>
+                                            </div>
+                                    
                                             <section className='flex gap-5'>
                                                 <div className='flex justify-between items-center gap-2 w-[60px]'>
-                                                    <span className='cursor-pointer px-[1px]'> -</span>
+                                                    <span onClick={minusCountHandler} className='cursor-pointer px-[1px]'> -</span>
                                                     <p className='bg-[#17604e66] px-2 text-[14px] rounded-md'>{data.count}</p>
-                                                    <span className='cursor-pointer'> +</span>
+                                                    <span onClick={plusCountHandler} className='cursor-pointer'> +</span>
 
                                                 </div>
-                                                <BiSolidTrashAlt className=' text-1xl text-red-600 relative top-[2px]' />
+                                                <BiSolidTrashAlt onClick={removeProductHandler} className='cursor-pointer text-1xl text-red-600 relative top-[2px]' />
                                             </section>
 
                                         </div>

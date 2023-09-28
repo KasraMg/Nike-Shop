@@ -12,7 +12,7 @@ const Topbar = () => {
   }, [location.pathname])
 
   return (
-    <header className='relative z-[9999] '>
+    <header className='relative z-[9998] '>
       <div className={` ${url.length > 2 ? 'bg-white' : 'bg-transparent'} flex w-full justify-between  items-center sm-x2:px-4  px-8 py-4 absolute   z-50 top-0 left-0`}>
 
         <div className=' md:hidden'>
@@ -39,11 +39,11 @@ const Topbar = () => {
             <span className={`${url.length > 2 ? 'bg-[white] text-[#024742]' : 'bg-[#024742]  text-white'}  rounded-3xl px-2 py-[5px]  text-[6px] -right-1 absolute`}>{cart.length}</span>
 
           </WavyLink>
+          
+          </div>
           <button type="button" className=" hidden sm:!block text-3xl" data-drawer-target="drawer-example" data-drawer-show="drawer-example" aria-controls="drawer-example">
             <RiMenu5Fill />
           </button>
-          </div>
-         
         </div>
 
 

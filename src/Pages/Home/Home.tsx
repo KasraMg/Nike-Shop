@@ -62,6 +62,10 @@ const Home = () => {
             spaceBetween: 50,
           },
           1200: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+          1370: {
             slidesPerView: 4,
             spaceBetween: 30,
           },

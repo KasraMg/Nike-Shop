@@ -5,7 +5,7 @@ import { WavyLink } from "react-wavy-transitions"
 const Card = (props: any) => {
   return ( 
       <WavyLink duration={1000} color="#024742" to={`Product/${props.id}`} >
-        <div className="flex text-left " >
+        <div className="flex text-left sm-x2:justify-center" >
               <section className="w-32 rounded-l-md relative" style={{ background: props.bg }}>
           <img className="absolute -right-[8px] top-1 w-[175px]" style={{ transform: ' rotate(331deg)' }} src={props.image} alt="" />
         </section>
