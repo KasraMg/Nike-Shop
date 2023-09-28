@@ -33,7 +33,7 @@ const Topbar = () => {
           <div className={`${url.length > 2 ? 'bg-[#024742] text-white' : 'bg-white'} rounded-md px-2 pt-2 pb-1 cursor-pointer relative`}>
             <WavyLink duration={1000} color="#024742" to='/basket'>
               <AiOutlineShoppingCart />
-              <span className={`${url.length > 2 ? 'bg-[white] text-[#024742]' : 'bg-[#024742]  text-white'}  rounded-3xl px-[6px] py-[3px]  text-[9px] -right-1 absolute`}>{cart.length}</span>
+              <span className={`${url.length > 2 ? 'bg-[white] text-[#024742]' : 'bg-[#024742]  text-white'}  rounded-3xl px-[5px] py-[3px]  text-[9px] -right-1 absolute`}>{cart.length}</span>
 
             </WavyLink>
 
