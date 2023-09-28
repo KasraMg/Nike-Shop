@@ -1,11 +1,10 @@
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai'
-import { product, productCart } from '../../Types/Project.types'
-import { Link } from 'react-router-dom'
-import swal from 'sweetalert'
+import { product, productCart } from '../../Types/Project.types'  
 import { useAppDispatch, useAppSelector } from '../../Redux/hooks'
 import { addToCart, minusCount, plusCount, removeProduct } from '../../Redux/Slice/Cart'
 import { useEffect, useState } from 'react'
 import { BiSolidTrashAlt } from 'react-icons/bi'
+import { WavyLink } from 'react-wavy-transitions'
 const Card = (props: product) => {
 
   const [isExists, setIsExists] = useState<productCart[] | null>(null)
@@ -55,7 +54,7 @@ const Card = (props: product) => {
 
   return (
     <div style={{ boxShadow: '-11px 11px 1px rgba(0, 0, 0, 0.3)' }} className="z-[999] rounded-3xl sm-x2:mx-auto  sm-x2:w-[280px]  w-[300px]">
-      <Link to={`/Product/${props.id}`}>
+      <WavyLink duration={1000} color="#024742" to={`/Product/${props.id}`}>
         <section style={{ background: `linear-gradient(135deg, #2a6e6a 8%, ${props.bg} 83%)`, borderRadius: '25px 25px 0 0' }} className="relative h-[252px]   pt-10">
           <p className="py-0 px-5  text-white text-1xl  font-[cursive] relative top-2">
             {props.title}
@@ -66,7 +65,7 @@ const Card = (props: product) => {
             NIKE
           </span>
         </section>
-      </Link>
+      </WavyLink>
       <section style={{ borderRadius: '0 0 25px 25px' }} className="h-[225px] p-3 bg-white">
         <p className=''>   {props.title} <span className='bg-red-600 relative bottom-[2px] ml-2 p-2 rounded-md text-white text-[13px]'>news</span></p>
         <div className='flex mb-4 mt-2'>
@@ -95,7 +94,10 @@ const Card = (props: product) => {
               <>
                 {data.id == props.id ? (
                   <div className='flex justify-between items-baseline '>
-                    <Link to='/basket' className='bg-[#32958e] transition-colors block hover:bg-[#305f5c] w-[100px] text-center rounded-md py-2 text-white mt-8'>Go to cart</Link>
+
+                    <div className='bg-[#32958e] transition-colors block hover:bg-[#305f5c] w-[100px] text-center rounded-md py-2 text-white mt-8'>
+                      <WavyLink duration={1000} color="#024742" to='/basket' >Go to cart</WavyLink>
+                    </div>
                     <section className='flex gap-5'>
                       <div className='flex justify-between items-center gap-2 w-[60px]'>
                         <span onClick={minusCountHandler} className='cursor-pointer px-[1px]'> -</span>

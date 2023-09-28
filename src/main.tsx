@@ -5,12 +5,14 @@ import './index.css'
 import { BrowserRouter } from 'react-router-dom' 
 import { Provider } from 'react-redux'
 import store from './Redux/store.ts'
+import { WavyContainer } from "react-wavy-transitions";
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
-        <App />
+      <WavyContainer />
+        <App /> 
       </BrowserRouter>
     </Provider>
   </React.StrictMode>,

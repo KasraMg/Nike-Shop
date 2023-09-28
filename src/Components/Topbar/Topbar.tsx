@@ -1,38 +1,49 @@
 import { SiNike } from 'react-icons/si'
 import { AiOutlineShoppingCart } from 'react-icons/ai'
 import { RiMenu5Fill } from 'react-icons/ri'
-import { Link } from 'react-router-dom'
-import { useEffect,useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useAppSelector } from '../../Redux/hooks'
+import { WavyLink } from 'react-wavy-transitions'
 const Topbar = () => {
-  const [url,setUrl]=useState<string>('')
+  const [url, setUrl] = useState<string>('')
   const cart = useAppSelector(state => state.cart)
   useEffect(() => {
     setUrl(location.pathname)
   }, [location.pathname])
-  
+
   return (
     <header className='relative z-[9999] '>
-      <div    className={` ${url.length > 2 ? 'bg-white' :  'bg-transparent'} flex w-full justify-between  items-center sm-x2:px-4  px-8 py-4 absolute   z-50 top-0 left-0`}>
+      <div className={` ${url.length > 2 ? 'bg-white' : 'bg-transparent'} flex w-full justify-between  items-center sm-x2:px-4  px-8 py-4 absolute   z-50 top-0 left-0`}>
 
-     <Link className=' md:hidden' to='/'><SiNike className={`${url.length > 2 ? 'text-[#2a6e6a] ' : 'text-white '} text-5xl` }/></Link> 
-     <Link className=' md:block hidden' to='/'><SiNike className='text-5xl text-[#2a6e6a]' /></Link>
+        <div className=' md:hidden'>
+          <WavyLink duration={1000} color="#024742" to='/'><SiNike className={`${url.length > 2 ? 'text-[#2a6e6a] ' : 'text-white '} text-5xl`} /></WavyLink>
+        </div>
+
+        <div className=' md:block hidden'>
+          <WavyLink duration={1000} color="#024742" to='/'><SiNike className='text-5xl text-[#2a6e6a]' /></WavyLink>
+        </div>
+
+
+
 
         <ul className='flex gap-6 sm:hidden' >
-        <Link to='/'><li className='cursor-pointer font-bold font-[cursive] text-black'>Home</li></Link>  
-        <Link to='/ContactUs'> <li className='cursor-pointer font-bold font-[cursive] text-gray-600'>Contact us</li></Link> 
-        <Link to='/'><li className='cursor-pointer font-bold font-[cursive] text-gray-600'>Accont</li></Link>  
+          <WavyLink duration={1000} color="#024742" to='/'><li className='cursor-pointer font-bold font-[cursive] text-black'>Home</li></WavyLink>
+          <WavyLink duration={1000} color="#024742" to='/ContactUs'> <li className='cursor-pointer font-bold font-[cursive] text-gray-600  whitespace-nowrap'>Contact us</li></WavyLink>
+          <WavyLink duration={1000} color="#024742" to='/'><li className='cursor-pointer font-bold font-[cursive] text-gray-600'>Accont</li></WavyLink>
         </ul>
 
         <div className='flex gap-3'>
-          <Link to='/basket' className={`${url.length > 2 ? 'bg-[#024742] text-white':'bg-white'} rounded-md px-2 py-2 cursor-pointer relative`}>
+          <div  className={`${url.length > 2 ? 'bg-[#024742] text-white' : 'bg-white'} rounded-md px-2 pt-2 pb-1 cursor-pointer relative`}>
+             <WavyLink duration={1000} color="#024742" to='/basket'>
             <AiOutlineShoppingCart />
-            <span className={`${url.length > 2 ? 'bg-[white] text-[#024742]':'bg-[#024742]  text-white'}  rounded-3xl px-2 py-[5px]  text-[6px] -right-1 absolute`}>{cart.length}</span>
+            <span className={`${url.length > 2 ? 'bg-[white] text-[#024742]' : 'bg-[#024742]  text-white'}  rounded-3xl px-2 py-[5px]  text-[6px] -right-1 absolute`}>{cart.length}</span>
 
-          </Link>
+          </WavyLink>
           <button type="button" className=" hidden sm:!block text-3xl" data-drawer-target="drawer-example" data-drawer-show="drawer-example" aria-controls="drawer-example">
             <RiMenu5Fill />
           </button>
+          </div>
+         
         </div>
 
 

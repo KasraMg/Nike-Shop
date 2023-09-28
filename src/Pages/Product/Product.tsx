@@ -102,7 +102,7 @@ const Product = () => {
                         }
                     }}
                     modules={[Autoplay]}
-                    rewind={true} className='w-full z-[9999]  mt-6 pb-12'>
+                    rewind={true} className='w-full z-[9998]  mt-6 pb-12'>
                     {products && products.map(data => (
                         <SwiperSlide className='overflow-hidden'>
                             <Card {...data} />

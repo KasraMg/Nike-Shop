@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import {  useAppSelector } from '../../Redux/hooks' 
 import Card from '../../Components/CartCard/Card'
+import { WavyLink } from 'react-wavy-transitions'
 
 const Basket = () => {
   const cart = useAppSelector(state => state.cart)
@@ -54,7 +55,7 @@ const Basket = () => {
         <main className='mx-auto block w-max text-center pt-48 pb-56'>
           <img src="/images/icons8-basket-100.png" className='mx-auto' alt="" />
           <p className='font-[cursive] my-4 text-white text-3xl'>Your Cart Is Empty :((</p>
-          <Link to='/'><button className='border border-solid border-white text-white px-3 hover:text-[#024742] hover:bg-white transition-colors py-2 mt-6  rounded-md'>Go shopping</button></Link>
+          <WavyLink duration={1000} color="#024742" to='/'><button className='border border-solid border-white text-white px-3 hover:text-[#024742] hover:bg-white transition-colors py-2 mt-6  rounded-md'>Go shopping</button></WavyLink>
         </main>
       )}
 
