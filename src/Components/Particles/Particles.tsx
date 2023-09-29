@@ -43,7 +43,7 @@ const ParticlesComponent = (color:{ color: string; }) => {
                 }
               },
               "size": {
-                "value": 4,
+                "value": 3,
                 "random": false,
                 "anim": {
                   "enable": false,
@@ -67,7 +67,7 @@ const ParticlesComponent = (color:{ color: string; }) => {
                 "distance": 600,
                 "color": `${color.color}`,
                 "opacity": 0.4,
-                "width": 2
+                "width": 1
               },
               "move": {
                 "enable": true,
@@ -104,7 +104,7 @@ const ParticlesComponent = (color:{ color: string; }) => {
                 },
                 "bubble": {
                   "distance": 400,
-                  "size": 40,
+                  "size": 10,
                   "duration": 2,
                   "opacity": 8,
                   "speed": 3
