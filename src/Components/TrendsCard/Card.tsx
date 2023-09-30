@@ -23,7 +23,7 @@ const Card = (props: product) => {
       },
       bg: props.bg,
       count: 1,
-      star: props.star
+      star: props.star 
     }
 
 
@@ -53,7 +53,7 @@ const Card = (props: product) => {
 
 
   return (
-    <div style={{ boxShadow: '-11px 11px 1px rgba(0, 0, 0, 0.3)' }} className="z-[999] rounded-3xl sm-x2:mx-auto  sm-x2:w-[280px]  w-[300px]">
+    <div style={{ boxShadow: '-11px 11px 1px rgba(0, 0, 0, 0.3)' }} className="z-[9998] rounded-3xl sm-x2:mx-auto  sm-x2:w-[280px]  w-[300px]">
       <WavyLink duration={1000} color="#024742" to={`/Product/${props.id}`}>
         <section style={{ background: `linear-gradient(135deg, #2a6e6a 8%, ${props.bg} 83%)`, borderRadius: '25px 25px 0 0' }} className="relative h-[252px]   pt-10">
           <p className="py-0 px-5  text-white text-1xl  font-[cursive] relative top-2">
@@ -71,11 +71,11 @@ const Card = (props: product) => {
         <div className='flex mb-4 mt-2'>
           {Array(props.star)
             .fill(0)
-            .map(() => <AiFillStar className='text-[orange]' />
+            .map(() => <AiFillStar key={crypto.randomUUID()} className='text-[orange]' />
             )}
           {Array(5 - props.star)
             .fill(0)
-            .map(() => <AiOutlineStar className='text-[orange]' />
+            .map(() => <AiOutlineStar key={crypto.randomUUID()} className='text-[orange]' />
             )}
 
         </div>

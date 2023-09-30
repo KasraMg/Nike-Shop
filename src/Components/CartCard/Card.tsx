@@ -1,5 +1,5 @@
 import { productCart } from '../../Types/Project.types'
-import { useAppDispatch, useAppSelector } from '../../Redux/hooks'
+import { useAppDispatch } from '../../Redux/hooks'
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai'
 import { BiSolidTrashAlt } from 'react-icons/bi'
 import { minusCount, plusCount, removeProduct } from '../../Redux/Slice/Cart'
@@ -51,11 +51,11 @@ const Card = (product: productCart) => {
                     <div className='flex mt-4'>
                         {Array(product.star)
                             .fill(0)
-                            .map(() => <AiFillStar className='text-[orange]' />
+                            .map(() => <AiFillStar key={crypto.randomUUID()} className='text-[orange]' />
                             )}
                         {Array(5 - product.star)
                             .fill(0)
-                            .map(() => <AiOutlineStar className='text-[orange]' />
+                            .map(() => <AiOutlineStar key={crypto.randomUUID()} className='text-[orange]' />
                             )}
                     </div>
 

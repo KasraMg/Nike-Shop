@@ -1,4 +1,3 @@
-import React from 'react'
 import { Map } from '../../Components/Map/Map'
 import { AiFillInstagram, AiFillYoutube, AiOutlineTwitter } from 'react-icons/ai'
 import { BsFacebook, BsPhone } from 'react-icons/bs'

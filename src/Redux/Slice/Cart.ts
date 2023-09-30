@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk, PayloadAction, current } from "@reduxjs/toolkit";
+import { createSlice,  PayloadAction, current } from "@reduxjs/toolkit";
 import { productCart } from "../../Types/Project.types";
 import swal from "sweetalert";
 

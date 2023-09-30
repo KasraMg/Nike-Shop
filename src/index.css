@@ -204,14 +204,23 @@
 
 @media (max-width:767px) {
   .swiper-button-prev {
-    left: 40% !important;
+    left: 44% !important;
 
   }
 }
+@media (max-width:500px) {
+  .swiper-button-prev {
+    left: 39% !important;
 
+  }
+}
 @media (max-width:350px) {
   .swiper-button-prev {
-    left: 37% !important;
+    left: 39% !important;
+
+  }
+  .swiper-button-next {
+    left: 53% !important;
 
   }
 }

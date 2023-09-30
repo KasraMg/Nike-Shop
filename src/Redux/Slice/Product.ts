@@ -10,7 +10,7 @@ export const getProductsFromServer = createAsyncThunk(
   async () => {
     return fetch("http://localhost:4000/products")
       .then((res) => res.json())
-      .then((data) => data);
+      .then((data) => data as product[]);
   }
 );
 
@@ -19,10 +19,7 @@ export const getProductsFromServer = createAsyncThunk(
 const productSlice = createSlice({
   name: "product",
   initialState,
-  reducers: {
-    All_Products: (state) => {
-      console.log(...current(state)); 
-    },
+  reducers: { 
     cheapest_product: (state) => {
       const prevState = [...current(state)]
       const newState = prevState.sort((a, b) => a.price.current_price - b.price.current_price)
@@ -36,10 +33,11 @@ const productSlice = createSlice({
   },
 
   extraReducers: (builder) => {
-    builder.addCase(getProductsFromServer.fulfilled, (state, action) => action.payload)
+    builder.addCase(getProductsFromServer.fulfilled, (_state, action) => action.payload)
+   
 
   },
 });
 
 export default productSlice.reducer;
-export const { All_Products, cheapest_product, expensivest_product } = productSlice.actions
+export const {  cheapest_product, expensivest_product } = productSlice.actions

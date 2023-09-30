@@ -1,11 +1,17 @@
-import {useEffect} from 'react'
-import { useLocation } from 'react-router-dom'
-export default function ScrollToUp() {
-const {pathname}=useLocation()
+import {useLayoutEffect} from 'react'
+import { useLocation } from 'react-router-dom';
 
-useEffect(() => {
-document.documentElement.scrollTo(0,0)
-
-}, [pathname])
-return null
+const ScrollToTop=({children}:any)=>{
+    const location=useLocation() 
+    useLayoutEffect(()=>{
+    
+        document.getElementById('root')?.scrollTo({ top: 0, behavior: 
+            'smooth' 
+          })
+        console.log(location.pathname);
+        
+    },[location.pathname])
+    return children
 }
+
+export default ScrollToTop

@@ -1,4 +1,4 @@
-import { SiNike } from 'react-icons/si'
+import { SiJordan, SiNike } from 'react-icons/si'
 import { AiOutlineShoppingCart } from 'react-icons/ai'
 import { RiMenu5Fill } from 'react-icons/ri'
 import { useEffect, useState } from 'react'
@@ -8,7 +8,7 @@ const Topbar = () => {
   const [url, setUrl] = useState<string>('')
   const cart = useAppSelector(state => state.cart)
   useEffect(() => {
-    setUrl(location.pathname) 
+    setUrl(location.pathname)
   }, [location.pathname])
 
   return (
@@ -24,9 +24,9 @@ const Topbar = () => {
         </div>
 
         <ul className='flex gap-6 sm:hidden' >
-          <WavyLink duration={1000} color="#024742" to='/'><li className={`${url.length < 2 ? ' text-black' : ' text-gray-600 '} cursor-pointer font-bold font-[cursive]`}>Home</li></WavyLink>
-          <WavyLink duration={1000} color="#024742" to='/ContactUs'> <li className={` ${location.pathname == '/ContactUs' ? 'text-black ' : 'text-gray-600 '}cursor-pointer font-bold font-[cursive] whitespace-nowrap`}>Contact us</li></WavyLink>
-          <WavyLink duration={1000} color="#024742" to='/AllProducts'><li className={`  ${location.pathname == '/AllProducts' ? 'text-black ' : 'text-gray-600 '} cursor-pointer font-bold font-[cursive] `}>Products</li></WavyLink>
+          <WavyLink duration={1000} color="#024742" to='/'><li className={`${url.length < 2 ? ' text-black' : ' text-gray-600 '} cursor-pointer font-bold outline-0 font-[cursive]`}>Home</li></WavyLink>
+          <WavyLink duration={1000} color="#024742" to='/ContactUs'> <li className={` ${location.pathname == '/ContactUs' ? 'text-black ' : 'text-gray-600 '}cursor-pointer font-bold outline-0 font-[cursive] whitespace-nowrap`}>Contact us</li></WavyLink>
+          <WavyLink duration={1000} color="#024742" to='/AllProducts'><li className={`  ${location.pathname == '/AllProducts' ? 'text-black ' : 'text-gray-600 '} cursor-pointer font-bold outline-0 font-[cursive] `}>Products</li></WavyLink>
         </ul>
 
         <div className='flex gap-3'>
@@ -46,9 +46,9 @@ const Topbar = () => {
 
       </div>
 
-      <div id="drawer-example" className="fixed z-[999] top-0 left-0 border-r bg-[url(/Images/projectBg.jpg)]  h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-white w-80 dark:bg-gray-800" aria-labelledby="drawer-label">
-        <div className="flex justify-between items-center py-3 px-4 border-b dark:border-gray-700">
-          <h3 className="font-bold text-white dark:text-white font-swap relative bottom-2" >
+      <div id="drawer-example" className="fixed bg-[#024742] z-[9999] top-0 left-0 border-r bg-[url(/Images/projectBg.jpg)]  h-screen p-4 overflow-y-auto transition-transform -translate-x-full  w-full" aria-labelledby="drawer-label">
+        <div className="flex justify-between items-center py-3 px-2 border-b 0">
+          <h3 className="font-bold text-white  font-swap relative bottom-2 font-[cursive]" >
             menu
           </h3>
           <button type="button"
@@ -62,16 +62,16 @@ const Topbar = () => {
         </div>
         <div className="px-2 py-10">
 
-          <ul className='flex flex-col gap-10 font-swap     list-none z-30 relative' data-drawer-hide="drawer-example" aria-controls="drawer-example" >
-            <a href="#me"><li className='hover:text-red-500 transition-colors cursor-pointer  '> 1</li></a>
-            <a data-drawer-hide="drawer-example" aria-controls="drawer-example" href="#skills"><li className='hover:text-red-500 transition-colors cursor-pointer  '>2 </li></a>
-            <a data-drawer-hide="drawer-example" aria-controls="drawer-example" href="#projects"><li className='hover:text-red-500 transition-colors cursor-pointer  '>3</li></a>
-            <a data-drawer-hide="drawer-example" aria-controls="drawer-example" href="#footer"><li className='hover:text-red-500 transition-colors cursor-pointer  '>4</li></a>
+          <ul className='text-left' data-drawer-hide="drawer-example" aria-controls="drawer-example">
+            <WavyLink duration={1000} color="#024742" to='/'><li className={`${url.length < 2 ? ' text-black' : ' text-white '} cursor-pointer text-left mt-5 font-bold outline-0 font-[cursive]`}>Home</li></WavyLink>
+            <WavyLink duration={1000} color="#024742" to='/ContactUs'> <li className={` ${location.pathname == '/ContactUs' ? 'text-black ' : 'text-white '}cursor-pointer text-left mt-5 font-bold outline-0 font-[cursive] whitespace-nowrap`}>Contact us</li></WavyLink>
+            <WavyLink duration={1000} color="#024742" to='/AllProducts'><li className={`  ${location.pathname == '/AllProducts' ? 'text-black ' : 'text-white '} cursor-pointer text-left mt-5 font-bold outline-0 font-[cursive] `}>Products</li></WavyLink>
           </ul>
         </div>
         <div className='flex absolute w-full bottom-4 justify-between px-4 border-t-2 border-solid border-black pt-4 left-0'>
-          <p className=' text-[14px]'>salam</p>
-        </div>
+                 <p className='font-[cursive] text-[#ffffff] text-2xl'>Just Do It </p>
+                <SiJordan className='   text-[2rem] text-[#ffffff]' />
+          </div>
       </div>
     </header>
 

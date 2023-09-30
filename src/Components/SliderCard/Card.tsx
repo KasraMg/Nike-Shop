@@ -1,11 +1,12 @@
 import { AiFillStar, AiOutlineStar } from "react-icons/ai"
 import { SiJordan } from "react-icons/si"
 import { WavyLink } from "react-wavy-transitions"
+import { product } from "../../Types/Project.types"
 
-const Card = (props: any) => {
+const Card = (props:  product) => {
   return ( 
       <WavyLink duration={1000} color="#024742" to={`Product/${props.id}`} >
-        <div className="flex text-left sm-x2:justify-center" >
+        <div className="flex text-left sm-x2:justify-center sm:mx-auto sm:w-max" >
               <section className="w-32 rounded-l-md relative" style={{ background: props.bg }}>
           <img className="absolute -right-[8px] top-1 w-[175px]" style={{ transform: ' rotate(331deg)' }} src={props.image} alt="" />
         </section>
@@ -15,16 +16,16 @@ const Card = (props: any) => {
 
             {Array(props.star)
               .fill(0)
-              .map(() => <AiFillStar className='text-[orange]' />
+              .map(() => <AiFillStar key={crypto.randomUUID()} className='text-[orange]' />
               )}
             {Array(5 - props.star)
               .fill(0)
-              .map(() => <AiOutlineStar className='text-[orange]' />
+              .map(() => <AiOutlineStar key={crypto.randomUUID()} className='text-[orange]' />
               )}
 
           </div>
           <p className="text-[12px] font-bold">{props.price.current_price}$</p>
-          <p className="text-[12px] text-gray-600">{props.colors} Colors</p>
+          <p className="text-[8px] text-gray-600"> {props.Designed_by}  </p>
 
           <SiJordan className=' absolute right-2 cursor-pointer bottom-2' />
         </main>

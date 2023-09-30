@@ -19,16 +19,14 @@ const Product = () => {
     const dispatch = useAppDispatch()
 
     useEffect(() => {
-        dispatch(getProductsFromServer())
-        console.log(products);
+        dispatch(getProductsFromServer()) 
 
     }, [])
 
     useEffect(() => {
         fetch(`http://localhost:4000/products?id=${param.id}`)
             .then(res => res.json())
-            .then(data => {
-                console.log(data);
+            .then(data => { 
                 setProductInfo(data[0])
                 window.scrollTo(0, 0)
             })
@@ -105,7 +103,7 @@ const Product = () => {
                     modules={[Autoplay]}
                     rewind={true} className='w-full z-[9998]  mt-6 pb-12'>
                     {products && products.map(data => (
-                        <SwiperSlide className='overflow-hidden'>
+                        <SwiperSlide key={crypto.randomUUID()} className='overflow-hidden'>
                             <Card {...data} />
                         </SwiperSlide>
                     ))}

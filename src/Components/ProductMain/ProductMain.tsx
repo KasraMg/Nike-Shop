@@ -29,9 +29,7 @@ const ProductMain = (props: product) => {
         dispatch(removeProduct(props.id))
       }
 
-    useEffect(() => {
-        console.log('rf');
-        
+    useEffect(() => { 
         const data = cart.filter(product => {
             return product.id == props.id
         })
@@ -101,11 +99,11 @@ const ProductMain = (props: product) => {
                             <div className='flex gap-2'>
                                 {Array(props.star)
                                     .fill(0)
-                                    .map(() => <AiFillStar className='text-[orange]' />
+                                    .map(() => <AiFillStar key={crypto.randomUUID()} className='text-[orange]' />
                                     )}
                                 {Array(5 - props.star)
                                     .fill(0)
-                                    .map(() => <AiOutlineStar className='text-[orange]' />
+                                    .map(() => <AiOutlineStar key={crypto.randomUUID()} className='text-[orange]' />
                                     )}
                             </div>
 
@@ -116,7 +114,7 @@ const ProductMain = (props: product) => {
                         <p>SIZE</p>
                         <ul className='flex gap-2'>
                             {props.size.map(data => (
-                                <li className='text-[14px]'>{data}</li>
+                                <li key={crypto.randomUUID()} className='text-[14px]'>{data}</li>
                             ))}
                         </ul>
                     </div>
@@ -127,7 +125,7 @@ const ProductMain = (props: product) => {
                             {isExists.map(data => (
                                 <>
                                     {data.id == props.id ? (
-                                        <div className='flex justify-between items-baseline '>
+                                        <div key={crypto.randomUUID()} className='flex justify-between items-baseline '>
                                             <div  className='bg-[#32958e] transition-colors block hover:bg-[#305f5c] w-[100px] text-center rounded-md py-2 text-white mt-8'>
                                                         <WavyLink duration={1000} color="#eee" to='/basket'>Go to cart</WavyLink>
                                             </div>

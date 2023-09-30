@@ -1,12 +1,30 @@
-import { Link } from 'react-router-dom'
-import {  useAppSelector } from '../../Redux/hooks' 
+import { useAppSelector } from '../../Redux/hooks'
 import Card from '../../Components/CartCard/Card'
 import { WavyLink } from 'react-wavy-transitions'
+import { useEffect, useState } from 'react'
+import swal from 'sweetalert'
 
 const Basket = () => {
   const cart = useAppSelector(state => state.cart)
+  const [total, setTotal] = useState<any>(0)
+  let totalPrice: any;
 
+  useEffect(() => {
+    totalPrice = 0
+    cart.map(product => {
+      totalPrice += product.count * product.price.current_price
+    })
+    setTotal(totalPrice);
 
+  }, [cart])
+
+const purchaseHandler=()=>{
+  swal({
+    title:'Coming Soon...',
+    icon:'warning',
+    buttons:'ok'
+  })
+}
   return (
     <div className='bg-[#024742] mt-20 px-8 sm-x2:px-4 '>
 
@@ -18,34 +36,23 @@ const Basket = () => {
             <p className='text-5xl text-white font-[cursive] my-8'>Products:</p>
             <hr className='w-full' />
             {cart.map(product => (
-
-            <Card {...product}/>
-               
+              <Card {...product} />
             ))}
           </section>
 
 
 
           <section className='pt-12 w-1/2'>
-            <p className='text-5xl text-white font-[cursive] my-8'>Products:</p>
+            <p className='text-5xl text-white font-[cursive] my-8'>Check out</p>
             <hr className='w-full' />
-            {cart.map(product => (
-
-              <div className='flex mt-10'>
-                <div style={{ background: `linear-gradient(135deg, #2a6e6a 8%, ${product.bg} 83%)` }}>
-                  <img src={product.image} className='w-36' alt="" />
-                </div>
-                <div className='bg-white flex items-center justify-between px-4 py-2  w-80'>
-                  <div>
-                    <p>{product.title}</p>
-                    <p>{product.price.current_price}</p>
-                    <p>{product.count}</p>
-                  </div>
-                  <p>remover</p>
-                </div>
+            <div className="relative mt-8 w-[400px] text-[rgb(0,59,8)] z-[999] rounded-3xl p-8 bg-[#ecf0f3] ">
+              <div className='text-left text-2xl font-[cursive] gap-5 mx-auto font-bold flex'>
+                <p>Total :</p>
+                <p>$ {total}</p>
               </div>
-
-            ))}
+              <p className=' text-[15px] mt-4 tracking-tight font-[cursive]'>Taxes and shipping calculated at checkout</p>
+              <button onClick={purchaseHandler} className='text-1xl w-full py-2 rounded-md transition-colors hover:bg-[rgb(0,59,8)] text-white mt-6 bg-[#024742]'>purchase</button>
+            </div>
           </section>
 
 

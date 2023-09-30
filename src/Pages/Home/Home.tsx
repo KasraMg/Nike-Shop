@@ -11,18 +11,27 @@ import Card from '../../Components/TrendsCard/Card';
 import ParticlesComponent from '../../Components/Particles/Particles';
 import { getProductsFromServer } from '../../Redux/Slice/Product';
 import { useAppDispatch, useAppSelector } from '../../Redux/hooks';
- 
-const Home = () => { 
-  
+
+const Home = () => {
+
   const products = useAppSelector(state => state.product)
   const dispatch = useAppDispatch()
-  
+
   useEffect(() => {
     dispatch(getProductsFromServer())
-    console.log(products);
-    
   }, [])
-  
+
+  const ShoeTypeSlider: string[] = [
+    'https://static.nike.com/a/images/f_auto/dpr_1.3,cs_srgb/h_300,c_limit/3aef76c8-46c5-4f2a-a18c-3e9bdc148433/nike-offizielle-website.jpg',
+    'https://static.nike.com/a/images/f_auto/dpr_1.3,cs_srgb/h_300,c_limit/5027a28c-3984-4287-94d1-ee6198238ce9/nike-offizielle-website.jpg',
+    'https://static.nike.com/a/images/f_auto/dpr_1.3,cs_srgb/h_300,c_limit/be13cfe4-b5a9-4c26-bee0-b716e98b099d/nike-offizielle-website.jpg',
+    'https://static.nike.com/a/images/f_auto/dpr_1.3,cs_srgb/h_300,c_limit/b4722f0f-c0e4-4a1b-8050-9f026ef947e9/nike-offizielle-website.jpg',
+    'https://static.nike.com/a/images/f_auto/dpr_1.3,cs_srgb/h_300,c_limit/5f432ab0-7ed1-48b9-b8c8-9eb3f5dcb63d/nike-offizielle-website.jpg',
+    'https://static.nike.com/a/images/f_auto/dpr_1.3,cs_srgb/h_300,c_limit/11550514-c82b-46b2-afd8-e5dd62698371/nike-offizielle-website.jpg',
+    'https://static.nike.com/a/images/f_auto/dpr_1.3,cs_srgb/h_300,c_limit/ed6efa3d-bb62-4d41-89f1-49d01418fe49/nike-offizielle-website.jpg',
+    'https://static.nike.com/a/images/f_auto/dpr_1.3,cs_srgb/h_300,c_limit/1d2fd0c4-a7dd-4159-84c0-a0364c0990e3/nike-offizielle-website.jpg',
+    'https://static.nike.com/a/images/f_auto/dpr_1.3,cs_srgb/h_300,c_limit/3aef76c8-46c5-4f2a-a18c-3e9bdc148433/nike-offizielle-website.jpg'
+  ]
 
   return (
     <>
@@ -70,11 +79,11 @@ const Home = () => {
             spaceBetween: 30,
           },
         }}
-        className=' px-4 z-[9998] sm-x2:bottom-52 md:!mb-0 relative bottom-16 sm:!w-full lg:w-[88%] md:pb-20  w-[80%]  pb-20   '
+        className=' px-4 z-[9997] sm-x2:bottom-52 md:!mb-0 relative bottom-16 sm:!w-full lg:w-[88%] md:pb-20  w-[80%]  pb-20   '
       >
-        {products.length > 0 && products.slice(0,6).map(data=> (
+        {products.length > 0 && products.slice(0, 6).map(data => (
           <SwiperSlide className='text-center  font-[18px]   flex justify-center items-center'>
-            <CardSlider {...data} />
+            <CardSlider key={crypto.randomUUID()} {...data} />
           </SwiperSlide>
         ))}
       </Swiper>
@@ -122,22 +131,22 @@ const Home = () => {
 
             }}
             modules={[Autoplay]}
-            rewind={true} className='w-full  sm-x2:block hidden'> 
-            {products && products.map(data=>( 
+            rewind={true} className='w-full  sm-x2:block hidden'>
+            {products && products.map(data => (
               <SwiperSlide className='overflow-hidden'>
-               <Card {...data}/>
-            </SwiperSlide>
-            ))} 
-         
+                <Card {...data} />
+              </SwiperSlide>
+            ))}
+
 
           </Swiper>
 
           <main className=' sm-x2:hidden grid gap-20 lg:justify-evenly sm:!grid-cols-[auto] lg:grid-cols-[auto,auto] lg:mx-10 sm-x2:!mx-5 grid-cols-[auto,auto,auto] justify-between mx-40'>
 
 
-            {products && products.slice(0,12).map(data=>(
-              <Card {...data}/>
-            ))} 
+            {products && products.slice(0, 12).map(data => (
+              <Card key={crypto.randomUUID()} {...data} />
+            ))}
           </main>
 
         </div>
@@ -146,7 +155,9 @@ const Home = () => {
 
       <div className="mt-64 pt-10 bg-[#024742] pb-6 " id='gallery'>
         <div className='flex justify-between sm:flex-wrap  sm:flex-col-reverse sm:justify-center sm:gap-3  lg:mx-10 sm-x2:!mx-5 mx-40'>
-          <p className='text-left sm:text-center font-[cursive] text-[#ffffff] sm:text-[1rem] text-4xl mb-16'>Shoes suitable for any type of work </p>
+          <p  onClick={()=>document.querySelector('body')?.scrollTo({ top: 0, behavior: 
+      'smooth' 
+    })} className='text-left sm:text-center font-[cursive] text-[#ffffff] sm:text-[1rem] text-4xl mb-16'>Shoes suitable for any type of work </p>
           <SiNike className='text-5xl bg-[#ffffff] text-[#2a6e6a] sm:mx-auto px-3 py-1 rounded-full' />
         </div>
 
@@ -176,36 +187,11 @@ const Home = () => {
           }}
           className='z-[9999]  relative slider2  sm:!w-full lg:w-[88%] sm:mt-4   w-[80%] mt-10 pb-32   '
         >
-
-          <SwiperSlide className=' flex justify-center items-center'  >
-            <img className='w-[200px] rounded-full' src="https://static.nike.com/a/images/f_auto/dpr_1.3,cs_srgb/h_300,c_limit/3aef76c8-46c5-4f2a-a18c-3e9bdc148433/nike-offizielle-website.jpg" alt="" />
-          </SwiperSlide>
-          <SwiperSlide className=' flex justify-center items-center'  >
-            <img className='w-[200px] rounded-full' src="https://static.nike.com/a/images/f_auto/dpr_1.3,cs_srgb/h_300,c_limit/5027a28c-3984-4287-94d1-ee6198238ce9/nike-offizielle-website.jpg" alt="" />
-          </SwiperSlide>
-          <SwiperSlide className=' flex justify-center items-center'  >
-            <img className='w-[200px] rounded-full' src="https://static.nike.com/a/images/f_auto/dpr_1.3,cs_srgb/h_300,c_limit/be13cfe4-b5a9-4c26-bee0-b716e98b099d/nike-offizielle-website.jpg" alt="" />
-          </SwiperSlide>
-          <SwiperSlide className=' flex justify-center items-center'  >
-            <img className='w-[200px] rounded-full' src="https://static.nike.com/a/images/f_auto/dpr_1.3,cs_srgb/h_300,c_limit/b4722f0f-c0e4-4a1b-8050-9f026ef947e9/nike-offizielle-website.jpg" alt="" />
-          </SwiperSlide>
-          <SwiperSlide className=' flex justify-center items-center'  >
-            <img className='w-[200px] rounded-full' src="https://static.nike.com/a/images/f_auto/dpr_1.3,cs_srgb/h_300,c_limit/5f432ab0-7ed1-48b9-b8c8-9eb3f5dcb63d/nike-offizielle-website.jpg" alt="" />
-          </SwiperSlide>
-          <SwiperSlide className=' flex justify-center items-center'  >
-            <img className='w-[200px] rounded-full' src="https://static.nike.com/a/images/f_auto/dpr_1.3,cs_srgb/h_300,c_limit/11550514-c82b-46b2-afd8-e5dd62698371/nike-offizielle-website.jpg" alt="" />
-          </SwiperSlide>
-          <SwiperSlide className=' flex justify-center items-center'  >
-            <img className='w-[200px] rounded-full' src="https://static.nike.com/a/images/f_auto/dpr_1.3,cs_srgb/h_300,c_limit/ed6efa3d-bb62-4d41-89f1-49d01418fe49/nike-offizielle-website.jpg" alt="" />
-          </SwiperSlide>
-          <SwiperSlide className=' flex justify-center items-center'  >
-            <img className='w-[200px] rounded-full' src="https://static.nike.com/a/images/f_auto/dpr_1.3,cs_srgb/h_300,c_limit/1d2fd0c4-a7dd-4159-84c0-a0364c0990e3/nike-offizielle-website.jpg" alt="" />
-          </SwiperSlide>
-          <SwiperSlide className=' flex justify-center items-center'  >
-            <img className='w-[200px] rounded-full' src="https://static.nike.com/a/images/f_auto/dpr_1.3,cs_srgb/h_300,c_limit/3aef76c8-46c5-4f2a-a18c-3e9bdc148433/nike-offizielle-website.jpg" alt="" />
-          </SwiperSlide>
-
-
+          {ShoeTypeSlider && ShoeTypeSlider.map(data => (
+            <SwiperSlide key={crypto.randomUUID()} className=' flex justify-center items-center'  >
+              <img  className='w-[200px] rounded-full' src={data} alt="" />
+            </SwiperSlide>
+          ))}
 
         </Swiper>
 
