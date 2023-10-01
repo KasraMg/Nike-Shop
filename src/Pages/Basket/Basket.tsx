@@ -22,7 +22,7 @@ const purchaseHandler=()=>{
   swal({
     title:'Coming Soon...',
     icon:'warning',
-    buttons:'ok'
+    buttons:'ok' as any
   })
 }
   return (

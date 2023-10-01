@@ -8,7 +8,7 @@ const initialState: product[] = []
 export const getProductsFromServer = createAsyncThunk(
   "product/getProductsFromServer",
   async () => {
-    return fetch("http://localhost:4000/products")
+    return fetch("https://nikeapi.iran.liara.run/products")
       .then((res) => res.json())
       .then((data) => data as product[]);
   }

@@ -24,7 +24,7 @@ const Product = () => {
     }, [])
 
     useEffect(() => {
-        fetch(`http://localhost:4000/products?id=${param.id}`)
+        fetch(`https://nikeapi.iran.liara.run/products?id=${param.id}`)
             .then(res => res.json())
             .then(data => { 
                 setProductInfo(data[0])
