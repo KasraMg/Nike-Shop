@@ -79,11 +79,11 @@ const Home = () => {
             spaceBetween: 30,
           },
         }}
-        className=' px-4 z-[9997] sm-x2:bottom-52 md:!mb-0 relative bottom-16 sm:!w-full lg:w-[88%] md:pb-20  w-[80%]  pb-20   '
+        className=' px-4 z-[9997] sm-x2:bottom-64 md:!mb-0 relative bottom-16 sm:!w-full lg:w-[88%] md:pb-20  w-[80%]  pb-20   '
       >
         {products.length > 0 && products.slice(0, 6).map(data => (
-          <SwiperSlide className='text-center  font-[18px]   flex justify-center items-center'>
-            <CardSlider key={crypto.randomUUID()} {...data} />
+          <SwiperSlide key={crypto.randomUUID()} className='text-center  font-[18px]   flex justify-center items-center'>
+            <CardSlider {...data} />
           </SwiperSlide>
         ))}
       </Swiper>
@@ -133,7 +133,7 @@ const Home = () => {
             modules={[Autoplay]}
             rewind={true} className='w-full  sm-x2:block hidden'>
             {products && products.map(data => (
-              <SwiperSlide className='overflow-hidden'>
+              <SwiperSlide key={crypto.randomUUID()} className='overflow-hidden'>
                 <Card {...data} />
               </SwiperSlide>
             ))}

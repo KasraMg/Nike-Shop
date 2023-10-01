@@ -63,9 +63,9 @@ const Topbar = () => {
         <div className="px-2 py-10">
 
           <ul className='text-left' data-drawer-hide="drawer-example" aria-controls="drawer-example">
-            <WavyLink duration={1000} color="#024742" to='/'><li className={`${url.length < 2 ? ' text-black' : ' text-white '} cursor-pointer text-left mt-5 font-bold outline-0 font-[cursive]`}>Home</li></WavyLink>
-            <WavyLink duration={1000} color="#024742" to='/ContactUs'> <li className={` ${location.pathname == '/ContactUs' ? 'text-black ' : 'text-white '}cursor-pointer text-left mt-5 font-bold outline-0 font-[cursive] whitespace-nowrap`}>Contact us</li></WavyLink>
-            <WavyLink duration={1000} color="#024742" to='/AllProducts'><li className={`  ${location.pathname == '/AllProducts' ? 'text-black ' : 'text-white '} cursor-pointer text-left mt-5 font-bold outline-0 font-[cursive] `}>Products</li></WavyLink>
+            <WavyLink duration={1000} color="#024742" to='/'><li className={`${url.length < 2 ? ' text-[#fff]' : ' text-[#dad8d8a2] '} cursor-pointer text-left mt-5 font-bold outline-0 font-[cursive]`}>Home</li></WavyLink>
+            <WavyLink duration={1000} color="#024742" to='/ContactUs'> <li className={` ${location.pathname == '/ContactUs' ? 'text-[#fff] ' : 'text-[#dad8d8a2] '}cursor-pointer text-left mt-5 font-bold outline-0 font-[cursive] whitespace-nowrap`}>Contact us</li></WavyLink>
+            <WavyLink duration={1000} color="#024742" to='/AllProducts'><li className={`  ${location.pathname == '/AllProducts' ? 'text-[#fff] ' : 'text-[#dad8d8a2] '} cursor-pointer text-left mt-5 font-bold outline-0 font-[cursive] `}>Products</li></WavyLink>
           </ul>
         </div>
         <div className='flex absolute w-full bottom-4 justify-between px-4 border-t-2 border-solid border-black pt-4 left-0'>

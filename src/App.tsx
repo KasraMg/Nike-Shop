@@ -4,28 +4,32 @@ import routes from './routes'
 import { useLocation, useRoutes } from 'react-router-dom'
 import ScrollToTop from './Components/ScrollToUp'
 import { useEffect } from 'react';
+import { initFlowbite } from 'flowbite'
 function App() {
 
   const { pathname } = useLocation()
 
   useEffect(() => {
-      document.body.scrollTo(0,0)  
-      
+    document.body.scrollTo(0, 0)
   }, [pathname])
+
+  useEffect(() => {
+    initFlowbite()
+  }, [])
 
 
   const router = useRoutes(routes)
   return (
     <>
-    
-    <ScrollToTop>
-    
-      <Topbar />
-      {router}
-      <Footer />
 
-     </ScrollToTop>
- </>
+      <ScrollToTop>
+
+        <Topbar />
+        {router}
+        <Footer />
+
+      </ScrollToTop>
+    </>
   )
 }
 

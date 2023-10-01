@@ -56,7 +56,7 @@ const Card = (props: product) => {
     <div style={{ boxShadow: '-11px 11px 1px rgba(0, 0, 0, 0.3)' }} className="z-[9998] rounded-3xl sm-x2:mx-auto  sm-x2:w-[280px]  w-[300px]">
       <WavyLink duration={1000} color="#024742" to={`/Product/${props.id}`}>
         <section style={{ background: `linear-gradient(135deg, #2a6e6a 8%, ${props.bg} 83%)`, borderRadius: '25px 25px 0 0' }} className="relative h-[252px]   pt-10">
-          <p className="py-0 px-5  text-white text-1xl  font-[cursive] relative top-2">
+          <p className="py-0 px-5  text-white text-1xl   font-[cursive] relative top-2">
             {props.title}
           </p>
           <img className='w-[253px] h-[200px] object-cover relative -top-[15px] bottom-6 ml-4 z-[99]' style={{ transform: ' rotate3d(-13, 1000, 104, 563deg)' }} src={props.image} />
@@ -67,7 +67,7 @@ const Card = (props: product) => {
         </section>
       </WavyLink>
       <section style={{ borderRadius: '0 0 25px 25px' }} className="h-[225px] p-3 bg-white">
-        <p className=''>   {props.title} <span className='bg-red-600 relative bottom-[2px] ml-2 p-2 rounded-md text-white text-[13px]'>news</span></p>
+        <p className='sm-x2:text-[14px] sm-x2:flex sm-x2:justify-between sm-x2:items-baseline'>   {props.title} <span className='bg-red-600 relative bottom-[2px] ml-2 p-2 sm-x2:p-1 sm-x2:px-2 rounded-md text-white text-[13px]'>news</span></p>
         <div className='flex mb-4 mt-2'>
           {Array(props.star)
             .fill(0)
@@ -80,11 +80,11 @@ const Card = (props: product) => {
 
         </div>
 
-        <div className='flex justify-between'>
+        <div className='flex justify-between sm-x2:text-[14px]'>
           <span className=''>Designed by:</span>
           {props.Designed_by}
         </div>
-        <div className='flex justify-between mt-3'>
+        <div className='flex justify-between mt-3 sm-x2:text-[14px]'>
           <span className=''>price:</span>
           <p>{props.price && props.price.current_price}$</p>
         </div>
@@ -98,14 +98,14 @@ const Card = (props: product) => {
                     <div className='bg-[#32958e] transition-colors block hover:bg-[#305f5c] w-[100px] text-center rounded-md py-2 text-white mt-8'>
                       <WavyLink duration={1000} color="#024742" to='/basket' >Go to cart</WavyLink>
                     </div>
-                    <section className='flex gap-5'>
-                      <div className='flex justify-between items-center gap-2 w-[60px]'>
-                        <span onClick={minusCountHandler} className='cursor-pointer px-[1px]'> -</span>
+                    <section className='flex gap-6 '>
+                      <div className='flex justify-between items-center gap-3 w-[60px]'>
+                        <span onClick={minusCountHandler} className='cursor-pointer text-[20px] px-[1px]'> -</span>
                         <p className='bg-[#17604e66] px-2 text-[14px] rounded-md'>{data.count}</p>
-                        <span onClick={plusCountHandler} className='cursor-pointer'> +</span>
+                        <span onClick={plusCountHandler} className='cursor-pointer text-[20px]'> +</span>
 
                       </div>
-                      <BiSolidTrashAlt className=' text-1xl text-red-600 relative top-[2px] cursor-pointer' onClick={removeProductHandler} />
+                      <BiSolidTrashAlt className='text-[20px] text-1xl text-red-600 relative top-[2px] cursor-pointer' onClick={removeProductHandler} />
                     </section>
 
                   </div>

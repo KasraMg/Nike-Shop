@@ -130,14 +130,14 @@ const ProductMain = (props: product) => {
                                                         <WavyLink duration={1000} color="#eee" to='/basket'>Go to cart</WavyLink>
                                             </div>
                                     
-                                            <section className='flex gap-5'>
-                                                <div className='flex justify-between items-center gap-2 w-[60px]'>
-                                                    <span onClick={minusCountHandler} className='cursor-pointer px-[1px]'> -</span>
+                                            <section className='flex gap-8'>
+                                                <div className='flex justify-between items-center gap-3 w-[60px]'>
+                                                    <span onClick={minusCountHandler} className='cursor-pointer px-[1px] text-[20px]'> -</span>
                                                     <p className='bg-[#17604e66] px-2 text-[14px] rounded-md'>{data.count}</p>
-                                                    <span onClick={plusCountHandler} className='cursor-pointer'> +</span>
+                                                    <span onClick={plusCountHandler} className='cursor-pointer text-[20px]'> +</span>
 
                                                 </div>
-                                                <BiSolidTrashAlt onClick={removeProductHandler} className='cursor-pointer text-1xl text-red-600 relative top-[2px]' />
+                                                <BiSolidTrashAlt onClick={removeProductHandler} className='text-[20px] cursor-pointer text-1xl text-red-600 relative top-[2px]' />
                                             </section>
 
                                         </div>
