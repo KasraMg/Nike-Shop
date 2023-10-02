@@ -11,7 +11,9 @@ import Card from '../../Components/TrendsCard/Card';
 import ParticlesComponent from '../../Components/Particles/Particles';
 import { getProductsFromServer } from '../../Redux/Slice/Product';
 import { useAppDispatch, useAppSelector } from '../../Redux/hooks';
-
+import Loader from '../../Components/Loader/Loader';
+import { WavyLink } from 'react-wavy-transitions';
+import { IoIosArrowRoundForward } from 'react-icons/io'
 const Home = () => {
 
   const products = useAppSelector(state => state.product)
@@ -39,7 +41,7 @@ const Home = () => {
         <Shoes3d />
         <main className='absolute md:relative left-0 top-0 z-[9997]' >
           <div className=' w-[600px] md:!w-full lg:w-[400px] pt-40 bg-[#024742] left-1 md:h-[300px]   h-[100vh] homeShape'>
-            <div className='text-white sm:pl-0 pl-8 space-y-6 font-[cursive] relative md:flex justify-center'>
+            <div className='text-white sm:pl-0 pl-8 space-y-6 font-[cursive]  relative md:flex justify-center'>
               <SiJordan style={{ transform: ' rotate(185deg)' }} className=' md:hidden text-center absolute lg:left-[180px] left-[279px] text-[6rem] top-[116px] font-[20rem] text-[#fffffff6]' />
 
               <p className=' sm-x2:!text-[20px] text-7xl md:text-3xl'>Step into </p>
@@ -81,11 +83,18 @@ const Home = () => {
         }}
         className=' px-4 z-[9997] sm-x2:bottom-64 md:!mb-0 relative bottom-16 sm:!w-full lg:w-[88%] md:pb-20  w-[80%]  pb-20   '
       >
-        {products.length > 0 && products.slice(0, 6).map(data => (
-          <SwiperSlide key={crypto.randomUUID()} className='text-center  font-[18px]   flex justify-center items-center'>
-            <CardSlider {...data} />
-          </SwiperSlide>
-        ))}
+        {products.length > 0 ? (
+          <>
+            {  products.slice(0, 6).map(data => (
+              <SwiperSlide key={crypto.randomUUID()} className='text-center  font-[18px]   flex justify-center items-center'>
+                <CardSlider {...data} />
+              </SwiperSlide>
+            ))}
+          </>
+        ) : (
+          <Loader />
+          )}
+
       </Swiper>
 
       <div className='relative'>
@@ -94,34 +103,34 @@ const Home = () => {
 
         <section className=' mt-32'>
           <div className='flex justify-between lg:mx-10 sm-x2:!mx-5 mx-40'>
-            <p className='text-left  font-[cursive] sm-x2:text-[16px] text-[#024742] text-4xl mb-16'>Why choose Nike shoes? </p>
+            <p className='text-left    sm-x2:text-[16px] text-[#024742] text-4xl mb-16'>Why choose Nike shoes? </p>
             <SiNike className='text-5xl bg-[#2a6e6a] text-white px-3 py-1 rounded-full' />
           </div>
 
           <main className='flex flex-wrap lg:mx-10 sm-x2:!mx-5 justify-center gap-12'>
             <div style={{ boxShadow: '12px 12px 26px rgba(0, 0, 0, 0.2),-12px -12px 26px rgba(255, 255, 255, 0.6)' }} className="relative  w-[300px] text-[rgb(0,59,8)] z-[999] rounded-3xl p-8 bg-[#ecf0f3] ">
               <span className='text-center block mx-auto font-bold'>Beauty</span>
-              <p className=' text-[13px] mt-8 tracking-tight font-[cursive]'>Nike has tried to make its name synonymous with fashion and beauty, so every pair of Nike sneakers or sneakers can mean a new season in fashion.</p>
+              <p className=' text-[13px] mt-8 tracking-tight  '>Nike has tried to make its name synonymous with fashion and beauty, so every pair of Nike sneakers or sneakers can mean a new season in fashion.</p>
 
             </div>
             <div style={{ boxShadow: '12px 12px 26px rgba(0, 0, 0, 0.2),-12px -12px 26px rgba(255, 255, 255, 0.6)' }} className="relative  w-[300px] text-[rgb(0,59,8)] z-[999] rounded-3xl p-8 bg-[#ecf0f3] ">
               <span className='text-center block mx-auto font-bold'>comfortable</span>
-              <p className=' text-[13px] mt-8 tracking-tight font-[cursive]'>Nike is not only a sports brand, but this brand also has the best offers for daily walks and a long working day. Give comfort to your feet.</p>
+              <p className=' text-[13px] mt-8 tracking-tight  '>Nike is not only a sports brand, but this brand also has the best offers for daily walks and a long working day. Give comfort to your feet.</p>
 
             </div>
             <div style={{ boxShadow: '12px 12px 26px rgba(0, 0, 0, 0.2),-12px -12px 26px rgba(255, 255, 255, 0.6)' }} className="relative  w-[300px] text-[rgb(0,59,8)] z-[999] rounded-3xl p-8 bg-[#ecf0f3] ">
               <span className='text-center block mx-auto font-bold'>diverse</span>
-              <p className=' text-[13px] mt-8 tracking-tight font-[cursive]'>You can use Nike shoes for walking on flat surfaces, climbing, running or specialized sports such as basketball, tennis or volleyball.</p>
+              <p className=' text-[13px] mt-8 tracking-tight  '>You can use Nike shoes for walking on flat surfaces, climbing, running or specialized sports such as basketball, tennis or volleyball.</p>
 
             </div>
           </main>
 
         </section>
 
-        <div className='mt-64'>
+        <div className='mt-40'>
           <div className='flex justify-between lg:mx-10 sm-x2:!mx-5 mx-40'>
-            <p className='text-left  font-[cursive] sm-x2:text-[19px] text-[#024742] text-4xl mb-16'>Trends </p>
-            <SiNike className='text-5xl bg-[#2a6e6a] text-white px-3 py-1 rounded-full' />
+            <p className='text-left    sm-x2:text-[19px] text-[#024742] text-4xl mb-16'>Trends </p>
+            <WavyLink to='/AllProducts' duration={1000} color="#fff"> <p className='text-center flex justify-end items-center gap-2    pb-5   sm-x2:text-[19px] text-[#024742]  text-[20px] l mb-16'>Other Products <IoIosArrowRoundForward/> </p></WavyLink>
           </div>
 
           <Swiper
@@ -147,17 +156,19 @@ const Home = () => {
             {products && products.slice(0, 12).map(data => (
               <Card key={crypto.randomUUID()} {...data} />
             ))}
+          
           </main>
-
+        
         </div>
 
       </div>
 
       <div className="mt-64 pt-10 bg-[#024742] pb-6 " id='gallery'>
         <div className='flex justify-between sm:flex-wrap  sm:flex-col-reverse sm:justify-center sm:gap-3  lg:mx-10 sm-x2:!mx-5 mx-40'>
-          <p  onClick={()=>document.querySelector('body')?.scrollTo({ top: 0, behavior: 
-      'smooth' 
-    })} className='text-left sm:text-center font-[cursive] text-[#ffffff] sm:text-[1rem] text-4xl mb-16'>Shoes suitable for any type of work </p>
+          <p onClick={() => document.querySelector('body')?.scrollTo({
+            top: 0, behavior:
+              'smooth'
+          })} className='text-left sm:text-center   text-[#ffffff] sm:text-[1rem] text-4xl mb-16'>Shoes suitable for any type of work </p>
           <SiNike className='text-5xl bg-[#ffffff] text-[#2a6e6a] sm:mx-auto px-3 py-1 rounded-full' />
         </div>
 
@@ -189,7 +200,7 @@ const Home = () => {
         >
           {ShoeTypeSlider && ShoeTypeSlider.map(data => (
             <SwiperSlide key={crypto.randomUUID()} className=' flex justify-center items-center'  >
-              <img  className='w-[200px] rounded-full' src={data} alt="" />
+              <img className='w-[200px] rounded-full' src={data} alt="" />
             </SwiperSlide>
           ))}
 

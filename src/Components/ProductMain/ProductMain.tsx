@@ -80,11 +80,11 @@ const ProductMain = (props: product) => {
             <div style={{ content: '' }} className="h-[500px] relative sm-x2:!h-full bg-[#ffffff] lg:w-[700px] md:!w-full md:ml-0 w-[800px] z-[3] ml-[200px] content">
                 <div className=" absolute md:relative sm-x2:!h-full sm-x2:pb-10 md:right-0 sm-x2:!px-4 md:px-8 md:w-full top-1 right-[64px] h-[500px]   w-[400px] z-10">
                     <div className="flex justify-between pt-5">
-                        <h1 className='text-[#024742] font-[cursive] text-3xl'>Nike</h1>
+                        <h1 className='text-[#024742]   text-3xl'>Nike</h1>
                         <SiJordan className='text-[#024742] relative md:left-0 left-8 text-2xl cursor-pointer' />
                     </div>
 
-                    <div className=" font-[cursive] uppercase ">
+                    <div className="   uppercase ">
                         <h3 className='mt-16'>disiend by {props.Designed_by}</h3>
                         <p className='my-4 sm-x2:whitespace-break-spaces text-3xl whitespace-nowrap'>{props.title}</p>
 

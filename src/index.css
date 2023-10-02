@@ -2,16 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
- 
- 
+
+
 @layer utilities {
 
   * {
     box-sizing: border-box;
   }
+
   html {
     scroll-behavior: smooth !important;
-}
+  }
+
   html,
   body,
   #root {
@@ -132,14 +134,62 @@
     }
   }
 
- 
-}.react-wavy-transitions__wavy-link{
-  width: 100% !important;
- }
- 
- .leaflet-control-attribution  {
-    display: none !important;
+  .ProductInfiniteScroll::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px transparent;
+    border-radius: 10px;
+    background-color: transparent;
   }
+
+  .ProductInfiniteScroll::-webkit-scrollbar {
+    width: 8px;
+    background-color: transparent;
+    border-radius: 10px;
+  }
+
+  .ProductInfiniteScroll::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px transparent;
+    background-color: transparent;
+  }
+
+  #loader::after {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 3px solid;
+    border-color: #024742 transparent;
+  }
+
+  #loader {
+    animation: rotation 1s linear infinite
+  }
+
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+}
+
+.react-wavy-transitions__wavy-link {
+  width: 100% !important;
+}
+
+.leaflet-control-attribution {
+  display: none !important;
+}
+
 .swiper-pagination-fraction {
   width: 100px;
   margin-bottom: 4rem;
@@ -166,6 +216,7 @@
   border: 1px solid #ffffff;
 
 }
+
 .swiper-button-prev:after,
 .swiper-button-next:after {
   font-size: 1.3rem;
@@ -208,45 +259,51 @@
 
   }
 }
+
 @media (max-width:500px) {
   .swiper-button-prev {
     left: 39% !important;
 
   }
 }
+
 @media (max-width:350px) {
   .swiper-button-prev {
     left: 39% !important;
 
   }
+
   .swiper-button-next {
     left: 53% !important;
 
   }
 }
-#tsparticles canvas{
-  position: absolute !important; 
+
+#tsparticles canvas {
+  position: absolute !important;
   bottom: 300px;
   z-index: 999;
 
 }
 
-.swal-footer{
+.swal-footer {
   text-align: center;
 }
-.swal-footer button{
+
+.swal-footer button {
   background-color: #024742 !important;
 }
-.swal-button--cancel{
+
+.swal-button--cancel {
   color: white !important;
 }
- .productPage .swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active {
+
+.productPage .swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active {
   background: white !important;
- }
- @media (min-width:901px) {
-  .product-Slide{
+}
+
+@media (min-width:901px) {
+  .product-Slide {
     width: 105% !important;
   }
- }
-
- 
+}

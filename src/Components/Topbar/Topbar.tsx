@@ -24,9 +24,9 @@ const Topbar = () => {
         </div>
 
         <ul className='flex gap-6 sm:hidden' >
-          <WavyLink duration={1000} color="#024742" to='/'><li className={`${url.length < 2 ? ' text-black' : ' text-gray-600 '} cursor-pointer font-bold outline-0 font-[cursive]`}>Home</li></WavyLink>
-          <WavyLink duration={1000} color="#024742" to='/ContactUs'> <li className={` ${location.pathname == '/ContactUs' ? 'text-black ' : 'text-gray-600 '}cursor-pointer font-bold outline-0 font-[cursive] whitespace-nowrap`}>Contact us</li></WavyLink>
-          <WavyLink duration={1000} color="#024742" to='/AllProducts'><li className={`  ${location.pathname == '/AllProducts' ? 'text-black ' : 'text-gray-600 '} cursor-pointer font-bold outline-0 font-[cursive] `}>Products</li></WavyLink>
+          <WavyLink duration={1000} color="#024742" to='/'><li className={`${url.length < 2 ? ' text-black' : ' text-gray-600 '} cursor-pointer font-bold outline-0  `}>Home</li></WavyLink>
+          <WavyLink duration={1000} color="#024742" to='/ContactUs'> <li className={` ${location.pathname == '/ContactUs' ? 'text-black ' : 'text-gray-600 '}cursor-pointer font-bold outline-0   whitespace-nowrap`}>Contact us</li></WavyLink>
+          <WavyLink duration={1000} color="#024742" to='/AllProducts'><li className={`  ${location.pathname == '/AllProducts' ? 'text-black ' : 'text-gray-600 '} cursor-pointer font-bold outline-0   `}>Products</li></WavyLink>
         </ul>
 
         <div className='flex gap-3'>
@@ -48,7 +48,7 @@ const Topbar = () => {
 
       <div id="drawer-example" className="fixed bg-[#024742] z-[9999] top-0 left-0 border-r bg-[url(/Images/projectBg.jpg)]  h-screen p-4 overflow-y-auto transition-transform -translate-x-full  w-full" aria-labelledby="drawer-label">
         <div className="flex justify-between items-center py-3 px-2 border-b 0">
-          <h3 className="font-bold text-white  font-swap relative bottom-2 font-[cursive]" >
+          <h3 className="font-bold text-white  font-swap relative bottom-2  " >
             menu
           </h3>
           <button type="button"
@@ -63,13 +63,13 @@ const Topbar = () => {
         <div className="px-2 py-10">
 
           <ul className='text-left' data-drawer-hide="drawer-example" aria-controls="drawer-example">
-            <WavyLink duration={1000} color="#024742" to='/'><li className={`${url.length < 2 ? ' text-[#fff]' : ' text-[#dad8d8a2] '} cursor-pointer text-left mt-5 font-bold outline-0 font-[cursive]`}>Home</li></WavyLink>
-            <WavyLink duration={1000} color="#024742" to='/ContactUs'> <li className={` ${location.pathname == '/ContactUs' ? 'text-[#fff] ' : 'text-[#dad8d8a2] '}cursor-pointer text-left mt-5 font-bold outline-0 font-[cursive] whitespace-nowrap`}>Contact us</li></WavyLink>
-            <WavyLink duration={1000} color="#024742" to='/AllProducts'><li className={`  ${location.pathname == '/AllProducts' ? 'text-[#fff] ' : 'text-[#dad8d8a2] '} cursor-pointer text-left mt-5 font-bold outline-0 font-[cursive] `}>Products</li></WavyLink>
+            <WavyLink duration={1000} color="#024742" to='/'><li className={`${url.length < 2 ? ' text-[#fff]' : ' text-[#dad8d8a2] '} cursor-pointer text-left mt-5 font-bold outline-0  `}>Home</li></WavyLink>
+            <WavyLink duration={1000} color="#024742" to='/ContactUs'> <li className={` ${location.pathname == '/ContactUs' ? 'text-[#fff] ' : 'text-[#dad8d8a2] '}cursor-pointer text-left mt-5 font-bold outline-0   whitespace-nowrap`}>Contact us</li></WavyLink>
+            <WavyLink duration={1000} color="#024742" to='/AllProducts'><li className={`  ${location.pathname == '/AllProducts' ? 'text-[#fff] ' : 'text-[#dad8d8a2] '} cursor-pointer text-left mt-5 font-bold outline-0   `}>Products</li></WavyLink>
           </ul>
         </div>
         <div className='flex absolute w-full bottom-4 justify-between px-4 border-t-2 border-solid border-black pt-4 left-0'>
-                 <p className='font-[cursive] text-[#ffffff] text-2xl'>Just Do It </p>
+                 <p className='  text-[#ffffff] text-2xl'>Just Do It </p>
                 <SiJordan className='   text-[2rem] text-[#ffffff]' />
           </div>
       </div>

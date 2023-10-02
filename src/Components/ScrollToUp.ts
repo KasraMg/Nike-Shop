@@ -7,9 +7,7 @@ const ScrollToTop=({children}:any)=>{
     
         document.getElementById('root')?.scrollTo({ top: 0, behavior: 
             'smooth' 
-          })
-        console.log(location.pathname);
-        
+          }) 
     },[location.pathname])
     return children
 }
