@@ -85,17 +85,17 @@ const Home = () => {
       >
         {products.length > 0 ? (
           <>
-            {  products.slice(0, 6).map(data => (
+            {products.slice(0, 6).map(data => (
               <SwiperSlide key={crypto.randomUUID()} className='text-center  font-[18px]   flex justify-center items-center'>
                 <CardSlider {...data} />
               </SwiperSlide>
             ))}
           </>
-        ) : (
-          <Loader />
-          )}
+        ) : null}
 
       </Swiper>
+
+ 
 
       <div className='relative'>
 
@@ -130,7 +130,7 @@ const Home = () => {
         <div className='mt-40'>
           <div className='flex justify-between lg:mx-10 sm-x2:!mx-5 mx-40'>
             <p className='text-left    sm-x2:text-[19px] text-[#024742] text-4xl mb-16'>Trends </p>
-            <WavyLink to='/AllProducts' duration={1000} color="#fff"> <p className='text-center flex justify-end items-center gap-2    pb-5   sm-x2:text-[19px] text-[#024742]  text-[20px] l mb-16'>Other Products <IoIosArrowRoundForward/> </p></WavyLink>
+            <WavyLink to='/AllProducts' duration={1000} color="#fff"> <p className='text-center flex justify-end items-center gap-2    pb-5   sm-x2:text-[19px] text-[#024742]  text-[20px] l mb-16'>Other Products <IoIosArrowRoundForward /> </p></WavyLink>
           </div>
 
           <Swiper
@@ -156,9 +156,9 @@ const Home = () => {
             {products && products.slice(0, 12).map(data => (
               <Card key={crypto.randomUUID()} {...data} />
             ))}
-          
+
           </main>
-        
+
         </div>
 
       </div>
@@ -208,7 +208,7 @@ const Home = () => {
 
       </div>
 
-
+      {!products.length && <Loader />}
 
     </>
   )

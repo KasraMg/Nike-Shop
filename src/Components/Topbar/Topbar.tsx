@@ -29,7 +29,7 @@ const Topbar = () => {
           <WavyLink duration={1000} color="#024742" to='/AllProducts'><li className={`  ${location.pathname == '/AllProducts' ? 'text-black ' : 'text-gray-600 '} cursor-pointer font-bold outline-0   `}>Products</li></WavyLink>
         </ul>
 
-        <div className='flex gap-3'>
+        <div className='flex z-[9997] gap-3'>
           <div className={`${url.length > 2 ? 'bg-[#024742] text-white' : 'bg-white'} rounded-md px-2 pt-2 pb-1 cursor-pointer relative`}>
             <WavyLink duration={1000} color="#024742" to='/basket'>
               <AiOutlineShoppingCart />
