@@ -20,8 +20,7 @@ function App() {
 
   const router = useRoutes(routes)
   return (
-    <>
-
+    <>  
       <ScrollToTop>
 
         <Topbar />
