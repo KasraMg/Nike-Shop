@@ -3,7 +3,7 @@
 <img src="./public/images/nike.PNG" width="100%"></img> 
 </br>
 
-## 📛📛 Use Vpn to see the site
+## 📛📛 PLease Use Vpn to see the site
  
 <div>
 
