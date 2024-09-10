@@ -3,7 +3,12 @@
 @tailwind utilities;
 
 
-
+@layer base {
+  @font-face {
+      font-family: playpen;
+      src: url('../public/fonts/PlaypenSans-Medium.ttf');
+  }
+}
 @layer utilities {
 
   * {

@@ -1,8 +1,7 @@
 import { createSlice, createAsyncThunk, current } from "@reduxjs/toolkit";
 import { product } from "../../Types/Project.types";
 
-
-
+ 
 const initialState: product[] = []
 
 export const getProductsFromServer = createAsyncThunk(
@@ -13,8 +12,7 @@ export const getProductsFromServer = createAsyncThunk(
       .then((data) => data as product[]);
   }
 );
-
-
+ 
 
 const productSlice = createSlice({
   name: "product",
