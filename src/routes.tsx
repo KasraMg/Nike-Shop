@@ -1,8 +1,9 @@
 import Home from "./Pages/Home/Home"
 import Basket from './Pages/Basket/Basket'
-import ContactUs from "./Pages/ContactUs/ContactUs"
+import Contact from "./Pages/Contact/Contact"
 import Product from "./Pages/Product/Product"
-import AllProducts from "./Pages/AllProducts/AllProducts"
+import Products from "./Pages/Products/Products"
+
 let routes = [
       {
             path: '/', element: <Home />
@@ -11,16 +12,15 @@ let routes = [
             path: '/Basket', element: <Basket />
       },
       {
-            path: '/ContactUs', element: <ContactUs />
+            path: '/Contact', element: <Contact />
       },
       {
             path: '/Product/:id', element: <Product />
       },
       {
-            path: '/AllProducts', element: <AllProducts />
+            path: '/Products', element: <Products />
       }
 
 ]
-
-
+ 
 export default routes

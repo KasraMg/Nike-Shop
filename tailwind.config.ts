@@ -12,6 +12,9 @@ module.exports = {
       'lg':{"max":"1200px"},
       'lg-x2':{"min":"1201px"}
     },
+    fontFamily:{
+      "playpen" : 'playpen', 
+    },
     extend: {},
   },
   plugins: [],
