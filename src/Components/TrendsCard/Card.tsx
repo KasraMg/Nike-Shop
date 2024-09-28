@@ -10,9 +10,9 @@ import {
 import { useEffect, useState } from "react";
 import { BiSolidTrashAlt } from "react-icons/bi";
 import { WavyLink } from "react-wavy-transitions";
-const Card = (props: product) => {
-  const [isExists, setIsExists] = useState<productCart[] | null>(null);
 
+const Card = (props: product) => {
+  const [isExists, setIsExists] = useState<productCart[] | null>(null); 
   const cart = useAppSelector((state) => state.cart);
   const dispatch = useAppDispatch();
 
