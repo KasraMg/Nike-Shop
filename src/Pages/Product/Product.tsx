@@ -23,7 +23,7 @@ const Product = () => {
   }, []);
 
   useEffect(() => {
-    fetch(`https://nikeapi.iran.liara.run/products?id=${param.id}`)
+    fetch(`https://nikeapi.liara.run/products?id=${param.id}`)
       .then((res) => res.json())
       .then((data) => {
         setProductInfo(data[0]);
