@@ -5,8 +5,7 @@ const Footer = () => {
       <section className="flex gap-3 items-center">
         <p className="text-2xl">Just Do It </p>
         <SiJordan className="text-[2rem] text-[#024742]" />
-      </section>
-
+      </section> 
       <p>© 2023 Nike, Inc. All rights reserved</p>
     </footer>
   );

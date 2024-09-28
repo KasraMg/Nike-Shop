@@ -16,6 +16,7 @@ const Products = () => {
   const [filterStatus, setFilterStatus] = useState<String>("all");
   const [skip, setSkip] = useState(9);
   const [more, _setmore] = useState(true);
+  
   useEffect(() => {
     dispatch(getProductsFromServer());
   }, []);

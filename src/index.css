@@ -2,15 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
   @font-face {
-      font-family: playpen;
-      src: url('../public/fonts/PlaypenSans-Medium.ttf');
+    font-family: playpen;
+    src: url("../public/fonts/PlaypenSans-Medium.ttf");
   }
 }
 @layer utilities {
-
   * {
     box-sizing: border-box;
   }
@@ -34,7 +32,7 @@
   }
 
   body {
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     background: #d0d0d0;
   }
 
@@ -56,15 +54,15 @@
 
   @keyframes scroll-down-move {
     0% {
-      left: -30px
+      left: -30px;
     }
 
     50% {
-      left: -40px
+      left: -40px;
     }
 
     to {
-      left: -30px
+      left: -30px;
     }
   }
 
@@ -94,11 +92,10 @@
 
   #code span:nth-of-type(1) {
     text-shadow: none;
-    opacity: .4;
+    opacity: 0.4;
   }
 
   @keyframes lower {
-
     0%,
     12%,
     18.999%,
@@ -158,7 +155,7 @@
   }
 
   #loader::after {
-    content: '';
+    content: "";
     box-sizing: border-box;
     position: absolute;
     left: 50%;
@@ -172,7 +169,7 @@
   }
 
   #loader {
-    animation: rotation 1s linear infinite
+    animation: rotation 1s linear infinite;
   }
 
   @keyframes rotation {
@@ -184,7 +181,6 @@
       transform: rotate(360deg);
     }
   }
-
 }
 
 .react-wavy-transitions__wavy-link {
@@ -219,7 +215,6 @@
 .slider2 .swiper-button-next:after {
   color: #ffffff;
   border: 1px solid #ffffff;
-
 }
 
 .swiper-button-prev:after,
@@ -228,24 +223,22 @@
   color: #024742;
   border: 1px solid #024742;
   border-radius: 100%;
-  padding: .5rem .8rem;
+  padding: 0.5rem 0.8rem;
 }
 
-@media (max-width:1200px) {
+@media (max-width: 1200px) {
   .swiper-button-prev {
     left: 44%;
     bottom: 80px;
   }
 }
 
-@media (max-width:900px) {
-
+@media (max-width: 900px) {
   .swiper-button-prev:after,
   .swiper-button-next:after {
     font-size: 1.3rem;
     color: #fff !important;
     border: 1px solid #fff !important;
-
   }
 
   .swiper-button-next {
@@ -258,29 +251,25 @@
   }
 }
 
-@media (max-width:767px) {
+@media (max-width: 767px) {
   .swiper-button-prev {
     left: 44% !important;
-
   }
 }
 
-@media (max-width:500px) {
+@media (max-width: 500px) {
   .swiper-button-prev {
     left: 39% !important;
-
   }
 }
 
-@media (max-width:350px) {
+@media (max-width: 350px) {
   .swiper-button-prev {
     left: 39% !important;
-
   }
 
   .swiper-button-next {
     left: 53% !important;
-
   }
 }
 
@@ -288,7 +277,6 @@
   position: absolute !important;
   bottom: 300px;
   z-index: 999;
-
 }
 
 .swal-footer {
@@ -303,11 +291,13 @@
   color: white !important;
 }
 
-.productPage .swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active {
+.productPage
+  .swiper-pagination-bullets-dynamic
+  .swiper-pagination-bullet-active {
   background: white !important;
 }
 
-@media (min-width:901px) {
+@media (min-width: 901px) {
   .product-Slide {
     width: 105% !important;
   }

@@ -16,6 +16,7 @@ import {
   removeProduct,
 } from "../../Redux/Slice/Cart";
 import { WavyLink } from "react-wavy-transitions";
+
 const ProductMain = (props: product) => {
   const [isExists, setIsExists] = useState<productCart[] | null>(null);
   const param = useParams();
