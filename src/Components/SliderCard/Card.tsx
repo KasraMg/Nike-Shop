@@ -6,14 +6,14 @@ import { product } from "../../Types/Project.types";
 const Card = (props: product) => {
   return (
     <WavyLink duration={1000} color="#024742" to={`Product/${props.id}`}>
-      <div className="flex text-left sm-x2:justify-center sm:mx-auto sm:w-max">
+      <div className="flex text-left xs:justify-center sm:mx-auto sm:w-max">
         <section
           className="w-32 rounded-l-md relative"
           style={{ background: props.bg }}
         >
           <img
             className="absolute -right-[8px] top-1 w-[175px]"
-            style={{ transform: " rotate(331deg)" }}
+            style={{ transform: "rotate(331deg)" }}
             src={props.image}
             alt=""
           />
@@ -43,7 +43,7 @@ const Card = (props: product) => {
           <p className="text-[12px] font-bold">{props.price.current_price}$</p>
           <p className="text-[8px] text-gray-600"> {props.Designed_by} </p>
 
-          <SiJordan className=" absolute right-2 cursor-pointer bottom-2" />
+          <SiJordan className="absolute right-2 cursor-pointer bottom-2" />
         </main>
       </div>
     </WavyLink>

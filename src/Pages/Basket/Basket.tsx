@@ -25,11 +25,11 @@ const Basket = () => {
     });
   };
   return (
-    <div className="bg-[#024742] mt-20 px-8 sm-x2:px-4 ">
+    <div className="bg-[#024742] mt-20 px-8 xs:px-4 ">
       {cart.length ? (
         <main className="h-[100vh] md:h-full md:pb-20 md:gap-5 flex lg:gap-20 md:flex-col gap-10">
           <section className="pt-12 w-1/2 md:w-full ">
-            <p className="text-5xl text-white sm-x2:text-2xl font-playpen my-8">
+            <p className="text-5xl text-white xs:text-2xl font-playpen my-8">
               Products:
             </p>
             <hr className="w-full" />
@@ -38,13 +38,13 @@ const Basket = () => {
             ))}
           </section>
 
-          <section className="pt-12 w-1/2 md:w-full md:pt-6 sm-x2:!pt-0">
-            <p className="text-5xl font-playpen text-white sm-x2:text-2xl my-8">
+          <section className="pt-12 w-1/2 md:w-full md:pt-6 xs:!pt-0">
+            <p className="text-5xl font-playpen text-white xs:text-2xl my-8">
               Check out
             </p>
             <hr className="w-full" />
-            <div className="relative mt-8 lg:w-full w-[400px] text-[rgb(0,59,8)] z-[999] rounded-3xl sm-x2:px-6 p-8 bg-[#ecf0f3] ">
-              <div className="text-left sm-x2:text-[20px] text-2xl gap-5 mx-auto font-bold flex">
+            <div className="relative mt-8 lg:w-full w-[400px] text-[rgb(0,59,8)] z-[999] rounded-3xl xs:px-6 p-8 bg-[#ecf0f3] ">
+              <div className="text-left xs:text-[20px] text-2xl gap-5 mx-auto font-bold flex">
                 <p>Total :</p>
                 <p>$ {total}</p>
               </div>
@@ -63,7 +63,7 @@ const Basket = () => {
       ) : (
         <main className="mx-auto block w-max text-center pt-48 pb-56">
           <img src="/images/icons8-basket-100.png" className="mx-auto" alt="" />
-          <p className="  sm-x2:text-[22px] my-4 text-white text-3xl font-playpen">
+          <p className="  xs:text-[22px] my-4 text-white text-3xl font-playpen">
             Your Cart Is Empty :((
           </p>
           <WavyLink duration={1000} color="#024742" to="/">

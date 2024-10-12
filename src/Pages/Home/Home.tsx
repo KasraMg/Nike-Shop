@@ -46,23 +46,23 @@ const Home = () => {
                 className=" md:hidden text-center absolute lg:left-[180px] left-[279px] text-[6rem] top-[116px] font-[20rem] text-[#fffffff6]"
               />
 
-              <p className=" sm-x2:!text-[20px] text-7xl md:text-3xl">
+              <p className=" xs:!text-[20px] text-7xl md:text-3xl">
                 Step into{" "}
               </p>
               <p
-                className="sm-x2:!text-[20px] text-9xl md:flex md:text-3xl lg:ml-3 ml-28"
+                className="xs:!text-[20px] text-9xl md:flex md:text-3xl lg:ml-3 ml-28"
                 id="code"
               >
                 {" "}
                 S<span>t</span>{" "}
                 <SiJordan
                   style={{ transform: " rotate(185deg)" }}
-                  className=" sm-x2:mt-2 md:block hidden font-[20rem] text-[#fffffff6]"
+                  className=" xs:mt-2 md:block hidden font-[20rem] text-[#fffffff6]"
                 />{" "}
-                <span className=" sm-x2:ml-5 ml-10 md:ml-1"> l</span>
+                <span className=" xs:ml-5 ml-10 md:ml-1"> l</span>
                 <span>e</span>
               </p>
-              <p className="sm-x2:!text-[20px] text-7xl md:text-3xl md:ml-2">
+              <p className="xs:!text-[20px] text-7xl md:text-3xl md:ml-2">
                 With Nike
               </p>
             </div>
@@ -70,7 +70,7 @@ const Home = () => {
         </main>
         <a
           href="#gallery"
-          className="scrollDown sm:hidden text-[#10753A] absolute right-1 bottom-32  "
+          className="scrollDown sm:hidden text-[#10753A] absolute right-1 bottom-32"
         >
           {" "}
           <span className="relative left-3 font-playpen">scroll down</span>{" "}
@@ -110,14 +110,14 @@ const Home = () => {
             spaceBetween: 30,
           },
         }}
-        className=" px-4 z-[9997] sm-x2:bottom-64 md:!mb-0 relative bottom-16 sm:!w-full lg:w-[88%] md:pb-20  w-[80%]  pb-20   "
+        className="px-4 z-[9997] xs:bottom-64 md:!mb-0 relative bottom-16 sm:!w-full lg:w-[88%] md:pb-20 w-[80%] pb-20"
       >
         {products.length > 0 ? (
           <>
             {products.slice(0, 6).map((data) => (
               <SwiperSlide
                 key={crypto.randomUUID()}
-                className="text-center  font-[18px]   flex justify-center items-center"
+                className="text-center font-[18px] flex justify-center items-center"
               >
                 <CardSlider {...data} />
               </SwiperSlide>
@@ -129,26 +129,26 @@ const Home = () => {
       <div className="relative">
         <ParticlesComponent color="#024742" />
 
-        <section className=" mt-32">
-          <div className="flex justify-between lg:mx-10 sm-x2:!mx-5 mx-40">
-            <p className="text-left font-playpen sm-x2:text-[16px] text-[#024742] text-4xl mb-16">
+        <section className="mt-32 xs:mt-2">
+          <div className="flex justify-between lg:mx-10 xs:!mx-5 mx-40">
+            <p className="text-left font-playpen xs:text-[16px] text-[#024742] text-4xl mb-16">
               Why choose Nike shoes?{" "}
             </p>
             <SiNike className="text-5xl bg-[#2a6e6a] text-white px-3 py-1 rounded-full" />
           </div>
 
-          <main className="flex flex-wrap lg:mx-10 sm-x2:!mx-5 justify-center gap-12">
+          <main className="flex flex-wrap lg:mx-10 xs:!mx-5 justify-center gap-12">
             <div
               style={{
                 boxShadow:
                   "12px 12px 26px rgba(0, 0, 0, 0.2),-12px -12px 26px rgba(255, 255, 255, 0.6)",
               }}
-              className="relative  w-[300px] text-[rgb(0,59,8)] z-[999] rounded-3xl p-8 bg-[#ecf0f3] "
+              className="relative w-[300px] text-[rgb(0,59,8)] z-[999] rounded-3xl p-8 bg-[#ecf0f3]"
             >
               <span className="text-center block mx-auto font-bold">
                 Beauty
               </span>
-              <p className=" text-[13px] mt-8 tracking-tight  ">
+              <p className="text-[13px] mt-8 tracking-tight">
                 Nike has tried to make its name synonymous with fashion and
                 beauty, so every pair of Nike sneakers or sneakers can mean a
                 new season in fashion.
@@ -159,12 +159,12 @@ const Home = () => {
                 boxShadow:
                   "12px 12px 26px rgba(0, 0, 0, 0.2),-12px -12px 26px rgba(255, 255, 255, 0.6)",
               }}
-              className="relative  w-[300px] text-[rgb(0,59,8)] z-[999] rounded-3xl p-8 bg-[#ecf0f3] "
+              className="relative w-[300px] text-[rgb(0,59,8)] z-[999] rounded-3xl p-8 bg-[#ecf0f3]"
             >
               <span className="text-center block mx-auto font-bold">
                 comfortable
               </span>
-              <p className=" text-[13px] mt-8 tracking-tight  ">
+              <p className="text-[13px] mt-8 tracking-tight  ">
                 Nike is not only a sports brand, but this brand also has the
                 best offers for daily walks and a long working day. Give comfort
                 to your feet.
@@ -175,7 +175,7 @@ const Home = () => {
                 boxShadow:
                   "12px 12px 26px rgba(0, 0, 0, 0.2),-12px -12px 26px rgba(255, 255, 255, 0.6)",
               }}
-              className="relative  w-[300px] text-[rgb(0,59,8)] z-[999] rounded-3xl p-8 bg-[#ecf0f3] "
+              className="relative w-[300px] text-[rgb(0,59,8)] z-[999] rounded-3xl p-8 bg-[#ecf0f3]"
             >
               <span className="text-center block mx-auto font-bold">
                 diverse
@@ -190,13 +190,13 @@ const Home = () => {
         </section>
 
         <div className="mt-40">
-          <div className="flex justify-between lg:mx-10 sm-x2:!mx-5 mx-40">
-            <p className="text-left font-playpen sm-x2:text-[19px] text-[#024742] text-4xl mb-16">
+          <div className="flex justify-between lg:mx-10 xs:!mx-5 mx-40">
+            <p className="text-left font-playpen xs:text-[19px] text-[#024742] text-4xl mb-16">
               Trends{" "}
             </p>
             <WavyLink to="/Products" duration={1000} color="#fff">
               {" "}
-              <p className="text-center flex justify-end items-center gap-2 font-playpen pb-5 sm-x2:text-[19px] text-[#024742] text-[20px] mb-16">
+              <p className="text-center flex justify-end items-center gap-2 font-playpen xs:text-[19px] text-[#024742] text-[20px] mb-16">
                 Other Products <IoIosArrowRoundForward />{" "}
               </p>
             </WavyLink>
@@ -209,7 +209,7 @@ const Home = () => {
             }}
             modules={[Autoplay]}
             rewind={true}
-            className="w-full  sm-x2:block hidden"
+            className="w-full  xs:block hidden"
           >
             {products &&
               products.map((data) => (
@@ -222,7 +222,7 @@ const Home = () => {
               ))}
           </Swiper>
 
-          <main className=" sm-x2:hidden grid gap-20 lg:justify-evenly sm:!grid-cols-[auto] lg:grid-cols-[auto,auto] lg:mx-10 sm-x2:!mx-5 grid-cols-[auto,auto,auto] justify-between mx-40">
+          <main className=" xs:hidden grid gap-20 lg:justify-evenly sm:!grid-cols-[auto] lg:grid-cols-[auto,auto] lg:mx-10 xs:!mx-5 grid-cols-[auto,auto,auto] justify-between mx-40">
             {products &&
               products
                 .slice(0, 12)
@@ -231,8 +231,8 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="mt-64 pt-10 bg-[#024742] pb-6 " id="gallery">
-        <div className="flex justify-between sm:flex-wrap sm:flex-col-reverse sm:justify-center sm:gap-3 lg:mx-10 sm-x2:!mx-5 mx-40">
+      <div className="mt-64 xs:mt-20 pt-10 bg-[#024742] pb-6 " id="gallery">
+        <div className="flex justify-between sm:flex-wrap sm:flex-col-reverse sm:justify-center sm:gap-3 lg:mx-10 xs:!mx-5 mx-40">
           <p
             onClick={() =>
               document.querySelector("body")?.scrollTo({

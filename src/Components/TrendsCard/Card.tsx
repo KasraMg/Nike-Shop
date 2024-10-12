@@ -12,7 +12,7 @@ import { BiSolidTrashAlt } from "react-icons/bi";
 import { WavyLink } from "react-wavy-transitions";
 
 const Card = (props: product) => {
-  const [isExists, setIsExists] = useState<productCart[] | null>(null); 
+  const [isExists, setIsExists] = useState<productCart[] | null>(null);
   const cart = useAppSelector((state) => state.cart);
   const dispatch = useAppDispatch();
 
@@ -56,7 +56,7 @@ const Card = (props: product) => {
   return (
     <div
       style={{ boxShadow: "-11px 11px 1px rgba(0, 0, 0, 0.3)" }}
-      className="z-[9998] rounded-3xl sm-x2:mx-auto  sm-x2:w-[266px]  w-[300px]"
+      className="z-[9998] rounded-3xl xs:mx-auto xs:w-[266px] w-[300px]"
     >
       <WavyLink duration={1000} color="#024742" to={`/Product/${props.id}`}>
         <section
@@ -66,16 +66,16 @@ const Card = (props: product) => {
           }}
           className="relative h-[252px]   pt-10"
         >
-          <p className="py-0 px-5  text-white text-1xl     relative top-2">
+          <p className="py-0 px-5 text-white text-1xl relative top-2">
             {props.title}
           </p>
           <img
             className="w-[253px] h-[200px] object-cover relative -top-[15px] bottom-6 ml-4 z-[99]"
-            style={{ transform: " rotate3d(-13, 1000, 104, 563deg)" }}
+            style={{ transform: "rotate3d(-13, 1000, 104, 563deg)" }}
             src={props.image}
           />
 
-          <span className=" absolute top-10 -right-5 inline-block text-[125px] font-black -ml-2 -mt-3 opacity-[0.1]">
+          <span className="absolute top-10 -right-5 inline-block text-[125px] xs:text-[97px] xs:-top-0 xs:right-0 font-black -ml-2 -mt-3 opacity-[0.1]">
             NIKE
           </span>
         </section>
@@ -84,10 +84,10 @@ const Card = (props: product) => {
         style={{ borderRadius: "0 0 25px 25px" }}
         className="h-[225px] p-3 bg-white"
       >
-        <p className="sm-x2:text-[14px] sm-x2:flex sm-x2:justify-between sm-x2:items-baseline">
+        <p className="xs:text-[14px] xs:flex xs:justify-between xs:items-baseline">
           {" "}
           {props.title}{" "}
-          <span className="bg-red-600 relative bottom-[2px] ml-2 p-2 sm-x2:p-1 sm-x2:px-2 rounded-md text-white text-[13px]">
+          <span className="bg-red-600 relative bottom-[2px] ml-2 p-2 xs:p-1 xs:px-2 rounded-md text-white text-[13px]">
             news
           </span>
         </p>
@@ -107,11 +107,11 @@ const Card = (props: product) => {
             ))}
         </div>
 
-        <div className="flex justify-between sm-x2:text-[14px]">
+        <div className="flex justify-between xs:text-[14px]">
           <span className="">Designed by:</span>
           {props.Designed_by}
         </div>
-        <div className="flex justify-between mt-3 sm-x2:text-[14px]">
+        <div className="flex justify-between mt-3 xs:text-[14px]">
           <span className="">price:</span>
           <p>{props.price && props.price.current_price}$</p>
         </div>
@@ -120,7 +120,7 @@ const Card = (props: product) => {
             {isExists.map((data) => (
               <>
                 {data.id == props.id ? (
-                  <div className="flex justify-between items-baseline ">
+                  <div className="flex justify-between items-baseline">
                     <div className="bg-[#32958e] transition-colors block hover:bg-[#305f5c] w-[100px] text-center rounded-md py-2 text-white mt-8">
                       <WavyLink duration={1000} color="#024742" to="/basket">
                         Go to cart

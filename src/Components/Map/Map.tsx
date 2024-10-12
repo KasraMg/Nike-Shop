@@ -3,7 +3,7 @@ import "leaflet/dist/leaflet.css";
 export const Map = () => {
   return (
     <MapContainer
-      className="w-[600px] sm-x2:h-[300px] lg:w-full rounded-md h-[400px]"
+      className="w-[600px] xs:h-[300px] lg:w-full rounded-md h-[400px]"
       center={[52.511063, 13.38297]}
       zoom={15}
       scrollWheelZoom={true}

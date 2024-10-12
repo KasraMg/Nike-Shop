@@ -27,7 +27,7 @@ const Card = (product: productCart) => {
   };
 
   return (
-    <section className="flex mt-10 relative md:w-full w-max sm-x2:flex-col">
+    <section className="flex mt-10 relative md:w-full w-max xs:flex-col">
       <div
         className="rounded-l"
         style={{
@@ -37,13 +37,13 @@ const Card = (product: productCart) => {
         <WavyLink duration={1000} color="#fff" to={`/product/${product.id}`}>
           <img
             src={product.image}
-            className="w-36 sm-x2:w-[80%] sm-x2:mx-auto sm-x2:relative sm-x2:bottom-3 "
+            className="w-36 xs:w-[80%] xs:mx-auto xs:relative xs:bottom-3 "
             alt=""
           />
         </WavyLink>
       </div>
 
-      <div className="bg-white sm:flex-col rounded-r md:w-full flex items-center justify-between px-4 py-4 sm:pt-0  w-80">
+      <div className="bg-white sm:flex-col rounded-r md:w-full flex items-center justify-between px-4 py-4 sm:pt-0 w-80">
         <div className="sm:flex sm:items-baseline sm:justify-between sm:w-full">
           <p>{product.title}</p>
           <p className="mt-4">
@@ -96,7 +96,7 @@ const Card = (product: productCart) => {
         className="absolute -right-3 cursor-pointer bg-white rounded-full -top-4 p-2"
         onClick={removeProductHandler}
       >
-        <BiSolidTrashAlt className="text-red-600    " />
+        <BiSolidTrashAlt className="text-red-600" />
       </div>
     </section>
   );

@@ -16,7 +16,7 @@ const Topbar = () => {
       <div
         className={` ${
           url.length > 2 ? "bg-white" : "bg-transparent"
-        } flex w-full justify-between  items-center sm-x2:px-4  px-8 py-4 absolute   z-50 top-0 left-0`}
+        } flex w-full justify-between items-center xs:px-4 px-8 py-4 absolute z-50 top-0 left-0`}
       >
         <div className=" md:hidden">
           <WavyLink duration={1000} color="#024742" to="/">
@@ -79,8 +79,8 @@ const Topbar = () => {
                 className={`${
                   url.length > 2
                     ? "bg-[white] text-[#024742]"
-                    : "bg-[#024742]  text-white"
-                }  rounded-3xl px-[5px] py-[3px]  text-[9px] -right-1 absolute`}
+                    : "bg-[#024742] text-white"
+                } rounded-3xl px-[5px] py-[3px]  text-[9px] -right-1 absolute`}
               >
                 {cart.length}
               </span>
@@ -100,7 +100,7 @@ const Topbar = () => {
 
       <div
         id="drawer-example"
-        className="fixed bg-[#024742] z-[9999] top-0 left-0 border-r bg-[url(/Images/projectBg.jpg)]  h-screen p-4 overflow-y-auto transition-transform -translate-x-full  w-full"
+        className="fixed bg-[#024742] font-playpen z-[9999] top-0 left-0 border-r bg-[url(/Images/projectBg.jpg)] h-screen p-4 overflow-y-auto transition-transform -translate-x-full w-full"
         aria-labelledby="drawer-label"
       >
         <div className="flex justify-between items-center py-3 px-2 border-b 0">
@@ -139,7 +139,7 @@ const Topbar = () => {
               <li
                 className={`${
                   url.length < 2 ? " text-[#fff]" : " text-[#dad8d8a2] "
-                } cursor-pointer text-left mt-5 font-bold outline-0  `}
+                } cursor-pointer text-left mt-5 font-bold outline-0`}
               >
                 Home
               </li>
@@ -150,8 +150,8 @@ const Topbar = () => {
                 className={` ${
                   location.pathname == "/Contact"
                     ? "text-[#fff] "
-                    : "text-[#dad8d8a2] "
-                }cursor-pointer text-left mt-5 font-bold outline-0   whitespace-nowrap`}
+                    : "text-[#dad8d8a2]"
+                } cursor-pointer text-left mt-5 font-bold outline-0 whitespace-nowrap`}
               >
                 Contact us
               </li>
@@ -162,7 +162,7 @@ const Topbar = () => {
                   location.pathname == "/Products"
                     ? "text-[#fff] "
                     : "text-[#dad8d8a2] "
-                } cursor-pointer text-left mt-5 font-bold outline-0   `}
+                } cursor-pointer text-left mt-5 font-bold outline-0`}
               >
                 Products
               </li>
@@ -170,8 +170,8 @@ const Topbar = () => {
           </ul>
         </div>
         <div className="flex absolute w-full bottom-4 justify-between px-4 border-t-2 border-solid border-black pt-4 left-0">
-          <p className="  text-[#ffffff] text-2xl">Just Do It </p>
-          <SiJordan className="   text-[2rem] text-[#ffffff]" />
+          <p className="text-[#ffffff] text-2xl">Just Do It </p>
+          <SiJordan className="text-[2rem] text-[#ffffff]" />
         </div>
       </div>
     </header>
