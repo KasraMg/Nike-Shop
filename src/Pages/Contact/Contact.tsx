@@ -12,13 +12,13 @@ const Contact = () => {
     <div className="mt-20 ">
       <section className="bg-[#2a6e6a] py-16 flex justify-around lg:flex-col-reverse lg:justify-center lg:px-5">
         <div className="space-y-8 relative  lg:mt-10">
-          <p className="text-white text-4xl md:text-2xl sm-x2:!text-[16px]  ">
+          <p className="text-white text-4xl md:text-2xl xs:!text-[16px]  ">
             Nike shop is open from 9 am to 12 pm
           </p>
-          <p className="text-white text-4xl md:text-2xl sm-x2:!text-[16px]  ">
+          <p className="text-white text-4xl md:text-2xl xs:!text-[16px]  ">
             We do not have another shop
           </p>
-          <div className="flex space-x-4 text-4xl sm-x2:!text-[26px] sm:!justify-evenly  lg:justify-end relative bottom-1">
+          <div className="flex space-x-4 text-4xl xs:!text-[26px] sm:!justify-evenly  lg:justify-end relative bottom-1">
             <a
               className="text-[#ffffff82] hover:text-white transition-colors"
               href="https://instagram.com/nike"
@@ -44,7 +44,7 @@ const Contact = () => {
               <AiFillYoutube />
             </a>
           </div>
-          <p className="text-white absolute bottom-2 sm:relative sm:bottom-0 text-4xl md:text-2xl sm-x2:!text-[16px]  ">
+          <p className="text-white absolute bottom-2 sm:relative sm:bottom-0 text-4xl md:text-2xl xs:!text-[16px]  ">
             Germany, Berlin, VoBstraBe Street
           </p>
         </div>
@@ -64,7 +64,7 @@ const Contact = () => {
             alt=""
           />
         </div>
-        <main className="space-y-6   sm-x2:pt-10">
+        <main className="space-y-6   xs:pt-10">
           <div
             style={{
               boxShadow:
@@ -101,7 +101,7 @@ const Contact = () => {
         </main>
       </section>
 
-      <section className="bg-white px-28 text-[20px] sm-x2:px-6 sm-x2:text-center leading-8 pb-20">
+      <section className="bg-white px-28 text-[20px] xs:px-6 xs:text-center leading-8 pb-20">
         <p>
           Our site is a platform for people who want to buy products in a safe
           and secure way. We want our costumers to be able to buy their desired

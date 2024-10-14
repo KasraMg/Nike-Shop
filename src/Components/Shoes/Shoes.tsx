@@ -4,7 +4,7 @@ import { useGLTF, ContactShadows, Environment } from "@react-three/drei";
 
 export default function Shoes() {
   return (
-    <div className=" h-full sm-x2:h-[71%] w-[137%] md:!w-[108%]">
+    <div className=" h-full xs:h-[71%] w-[137%] md:!w-[108%]">
       <Canvas
         eventSource={document.getElementById("root")!}
         eventPrefix="client"
